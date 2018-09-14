@@ -6,7 +6,7 @@
     <artifactId>maven-wagon-gs</artifactId>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Maven Wagon that can resolve and retrieve artifacts from Google Storage</description>
-    <version>0.4-SNAPSHOT</version>
+    <version>0.6-SNAPSHOT</version>
     <packaging>jar</packaging>
     <url>http://www.github.com/synack/maven-wagon-gs</url>
 
