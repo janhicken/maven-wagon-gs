@@ -51,7 +51,7 @@ public class GSWagon extends StreamWagon {
         if (bucket == null) {
             throw new TransferFailedException(String.format("Cannot find bucket '%s'", getBucketName()));
         } else {
-            return storage.get(resourceName) != null;
+            return bucket.get(resourceName) != null;
         }
     }
 
