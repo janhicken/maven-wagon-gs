@@ -107,8 +107,8 @@
     </build>
 
     <scm>
-        <connection>scm:git:git://github.com/synack/maven-wagon-gs.git</connection>
-        <developerConnection>scm:git:ssh://github.com/synack/maven-wagon-gs.git</developerConnection>
+        <connection>scm:git:git@github.com/synack/maven-wagon-gs.git</connection>
+        <developerConnection>scm:git:git@github.com/synack/maven-wagon-gs.git</developerConnection>
         <url>http://github.com/synack/maven-wagon-gs/tree/master</url>
     </scm>
 
