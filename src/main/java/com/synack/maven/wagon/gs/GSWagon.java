@@ -5,8 +5,6 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import org.apache.maven.wagon.*;
-import org.apache.maven.wagon.authentication.AuthenticationException;
-import org.apache.maven.wagon.authorization.AuthorizationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,8 +45,14 @@ public class GSWagon extends StreamWagon {
     }
 
     @Override
-    public boolean resourceExists(String resourceName) {
-        return storage.get(getBucketName()).get(resourceName) != null;
+    public boolean resourceExists(final String resourceName) throws TransferFailedException {
+        final Bucket bucket = storage.get(getBucketName());
+
+        if (bucket == null) {
+            throw new TransferFailedException(String.format("Cannot find bucket '%s'", getBucketName()));
+        } else {
+            return storage.get(resourceName) != null;
+        }
     }
 
     /**
