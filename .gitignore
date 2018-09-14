@@ -3,5 +3,5 @@
 .settings/
 .vscode/
 target/
-idea/
+.idea/
 *.iml
