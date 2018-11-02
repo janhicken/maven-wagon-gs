@@ -52,9 +52,6 @@ public class GSWagon extends StreamWagon {
         }
     }
 
-    /**
-     * Upload a file to gs
-     */
     @Override
     public void fillOutputData(final OutputData outputData) throws TransferFailedException {
         final Bucket bucket = storage.get(getBucketName());
@@ -62,7 +59,7 @@ public class GSWagon extends StreamWagon {
             throw new TransferFailedException(String.format("Cannot find bucket '%s'", getBucketName()));
         }
 
-        final Blob blob = bucket.create(outputData.getResource().getName(), new byte[]{});
+        final Blob blob = bucket.create(outputData.getResource().getName(), new byte[0]);
 
         final OutputStream outputStream = Channels.newOutputStream(blob.writer());
         outputData.setOutputStream(outputStream);
