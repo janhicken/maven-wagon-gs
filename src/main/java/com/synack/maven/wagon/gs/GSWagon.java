@@ -8,7 +8,9 @@ import org.apache.maven.wagon.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.channels.Channels;
 
 /**
  * Created by jdavey on 7/20/17.
@@ -17,7 +19,7 @@ import java.io.ByteArrayInputStream;
  */
 public class GSWagon extends StreamWagon {
 
-    private static Logger log = LoggerFactory.getLogger(GSWagon.class);
+    private static final Logger log = LoggerFactory.getLogger(GSWagon.class);
     private Storage storage;
 
     private String getBucketName() {
@@ -25,22 +27,22 @@ public class GSWagon extends StreamWagon {
     }
 
     @Override
-    public void fillInputData(InputData inputData) throws ResourceDoesNotExistException {
-        String bucketName = getBucketName();
-        String resourceName = inputData.getResource().getName();
-        log.info("Downloading: gs://" + bucketName + "/" + resourceName);
-
-        Bucket bucket = storage.get(bucketName);
-
-        Blob blob = bucket.get(resourceName);
-
-        if (blob == null) {
-            throw new ResourceDoesNotExistException("File: gs://" + bucketName + "/" + resourceName + " does not exist");
+    public void fillInputData(final InputData inputData) throws TransferFailedException, ResourceDoesNotExistException {
+        final Bucket bucket = storage.get(getBucketName());
+        if (bucket == null) {
+            throw new TransferFailedException(String.format("Cannot find bucket '%s'", getBucketName()));
         }
-        byte[] content = blob.getContent();
 
-        inputData.setInputStream(new ByteArrayInputStream(content));
-        inputData.getResource().setContentLength(content.length);
+        final Blob blob = bucket.get(inputData.getResource().getName());
+        if (blob == null) {
+            throw new ResourceDoesNotExistException(String.format("File not found: gs://%s/%s",
+                getBucketName(), inputData.getResource().getName()));
+        }
+
+        log.info("Downloading: gs://" + getBucketName() + "/" + inputData.getResource().getName());
+        final InputStream inputStream = Channels.newInputStream(blob.reader());
+        inputData.setInputStream(inputStream);
+        inputData.getResource().setContentLength(blob.getSize());
         inputData.getResource().setLastModified(blob.getUpdateTime());
     }
 
@@ -59,14 +61,17 @@ public class GSWagon extends StreamWagon {
      * Upload a file to gs
      */
     @Override
-    public void fillOutputData(OutputData outputData) {
-        String bucketName = getBucketName();
-        String resourceName = outputData.getResource().getName();
-        log.info("Uploading: gs://" + bucketName + "/" + resourceName);
+    public void fillOutputData(final OutputData outputData) throws TransferFailedException {
+        final Bucket bucket = storage.get(getBucketName());
+        if (bucket == null) {
+            throw new TransferFailedException(String.format("Cannot find bucket '%s'", getBucketName()));
+        }
 
-        Storage storage = StorageOptions.getDefaultInstance().getService();
-        Bucket bucket = storage.get(bucketName);
-        outputData.setOutputStream(new GSOutputStream(bucket, resourceName));
+        final Blob blob = bucket.get(outputData.getResource().getName());
+        log.info("Uploading: gs://" + getBucketName() + "/" + outputData.getResource().getName());
+
+        final OutputStream outputStream = Channels.newOutputStream(blob.writer());
+        outputData.setOutputStream(outputStream);
     }
 
     @Override
