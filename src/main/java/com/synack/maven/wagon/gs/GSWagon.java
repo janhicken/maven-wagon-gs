@@ -62,7 +62,7 @@ public class GSWagon extends StreamWagon {
             throw new TransferFailedException(String.format("Cannot find bucket '%s'", getBucketName()));
         }
 
-        final Blob blob = bucket.get(outputData.getResource().getName());
+        final Blob blob = bucket.create(outputData.getResource().getName(), new byte[]{});
 
         final OutputStream outputStream = Channels.newOutputStream(blob.writer());
         outputData.setOutputStream(outputStream);
