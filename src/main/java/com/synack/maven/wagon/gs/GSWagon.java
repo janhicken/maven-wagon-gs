@@ -5,8 +5,6 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import org.apache.maven.wagon.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -18,8 +16,6 @@ import java.nio.channels.Channels;
  * @plexus.component role="org.apache.maven.wagon.Wagon" role-hint="gs" instantiation-strategy="per-lookup"
  */
 public class GSWagon extends StreamWagon {
-
-    private static final Logger log = LoggerFactory.getLogger(GSWagon.class);
     private Storage storage;
 
     private String getBucketName() {
@@ -39,7 +35,6 @@ public class GSWagon extends StreamWagon {
                 getBucketName(), inputData.getResource().getName()));
         }
 
-        log.info("Downloading: gs://" + getBucketName() + "/" + inputData.getResource().getName());
         final InputStream inputStream = Channels.newInputStream(blob.reader());
         inputData.setInputStream(inputStream);
         inputData.getResource().setContentLength(blob.getSize());
@@ -68,7 +63,6 @@ public class GSWagon extends StreamWagon {
         }
 
         final Blob blob = bucket.get(outputData.getResource().getName());
-        log.info("Uploading: gs://" + getBucketName() + "/" + outputData.getResource().getName());
 
         final OutputStream outputStream = Channels.newOutputStream(blob.writer());
         outputData.setOutputStream(outputStream);
