@@ -2,19 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.synack</groupId>
+    <groupId>io.github.janhicken</groupId>
     <artifactId>maven-wagon-gs</artifactId>
-    <name>${project.groupId}:${project.artifactId}</name>
-    <description>Maven Wagon that can resolve and retrieve artifacts from Google Storage</description>
-    <version>0.7-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <url>http://www.github.com/synack/maven-wagon-gs</url>
+    <name>GCS Maven Wagon</name>
+    <description>Maven Wagon that can resolve and retrieve artifacts from Google Cloud Storage</description>
+    <version>1.0</version>
+    <url>https://www.github.com/janhicken/maven-wagon-gs</url>
 
     <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.scm.id>github.com</project.scm.id>
     </properties>
 
     <licenses>
@@ -24,95 +22,85 @@
         </license>
     </licenses>
 
+    <scm>
+        <connection>scm:git:git://github.com/janhicken/maven-wagon-gs.git</connection>
+        <developerConnection>scm:git:ssh://github.com/janhicken/maven-wagon-gs.git</developerConnection>
+        <url>${project.url}/tree/master</url>
+    </scm>
+
     <developers>
         <developer>
-            <name>Jon Davey</name>
-            <email>jond3k@gmail.com</email>
-            <organization>Synack</organization>
-            <organizationUrl>http://www.synack.com/</organizationUrl>
+            <name>Jan Hicken</name>
+            <email>janhicken@users.noreply.github.com</email>
+            <organization>GitHub</organization>
+            <organizationUrl>https://github.com/janhicken</organizationUrl>
         </developer>
     </developers>
 
     <distributionManagement>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-bom</artifactId>
+                <version>0.74.0-alpha</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-provider-api</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-storage</artifactId>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.4.2</version>
-                <configuration>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
-                    <releaseProfiles>releases</releaseProfiles>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
-                <extensions>true</extensions>
-                <executions>
-                  <execution>
-                     <id>default-deploy</id>
-                     <phase>deploy</phase>
-                     <goals>
-                        <goal>deploy</goal>
-                     </goals>
-                  </execution>
-               </executions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <tags>
-                        <tag>
-                            <name>plexus.component</name>
-                            <placement>a</placement>
-                            <head>Plexus Component:</head>
-                        </tag>
-                    </tags>
-                </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
-                        <id>sign-artifacts</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
                         <phase>verify</phase>
                         <goals>
                             <goal>sign</goal>
@@ -120,55 +108,18 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org</nexusUrl>
+                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
-    <scm>
-        <connection>scm:git:git@github.com:synack/maven-wagon-gs.git</connection>
-        <developerConnection>scm:git:git@github.com:synack/maven-wagon-gs.git</developerConnection>
-        <url>http://github.com/synack/maven-wagon-gs/tree/master</url>
-      <tag>HEAD</tag>
-  </scm>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.22</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-plugin-api</artifactId>
-            <version>3.3.9</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.wagon</groupId>
-            <artifactId>wagon-provider-api</artifactId>
-            <version>2.12</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.cloud</groupId>
-            <artifactId>google-cloud-storage</artifactId>
-            <version>1.2.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.22</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.easymock</groupId>
-            <artifactId>easymock</artifactId>
-            <version>3.4</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 </project>
