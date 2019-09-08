@@ -20,7 +20,7 @@ public class GSWagonTest extends StreamingWagonTestCase {
 
     @Override
     protected String getTestRepositoryUrl() {
-        return "gs://test-bucket";
+        return "gs://test-bucket/repo";
     }
 
     @Override

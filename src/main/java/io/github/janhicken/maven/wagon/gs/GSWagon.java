@@ -26,6 +26,8 @@ import java.util.stream.StreamSupport;
 public class GSWagon extends StreamWagon {
     private static Storage storage = StorageOptions.getDefaultInstance().getService();
 
+    protected String prefix;
+
     @VisibleForTesting
     static void setStorage(final Storage storage) {
         GSWagon.storage = storage;
@@ -40,7 +42,7 @@ public class GSWagon extends StreamWagon {
 
     @Override
     public void fillInputData(final InputData inputData) throws ResourceDoesNotExistException {
-        final Blob blob = storage.get(getBucketName(), inputData.getResource().getName());
+        final Blob blob = storage.get(getBucketName(), prefix + inputData.getResource().getName());
         if (blob == null) {
             throw new ResourceDoesNotExistException(String.format("File not found: gs://%s/%s",
                     getBucketName(), inputData.getResource().getName()));
@@ -54,7 +56,7 @@ public class GSWagon extends StreamWagon {
 
     @Override
     public boolean resourceExists(final String resourceName) {
-        return storage.get(getBucketName(), resourceName) != null;
+        return storage.get(getBucketName(), prefix + resourceName) != null;
     }
 
     @Override
@@ -63,6 +65,8 @@ public class GSWagon extends StreamWagon {
         final Set<String> blobs = StreamSupport.stream(storage.list(getBucketName()).iterateAll().spliterator(), false)
                 .limit(DEFAULT_BUFFER_SIZE)
                 .map(Blob::getName)
+                .filter(name -> name.startsWith(prefix))
+                .map(name -> name.substring(prefix.length()))
                 .filter(name -> name.startsWith(destinationDirectory))
                 .collect(Collectors.toSet());
 
@@ -88,20 +92,22 @@ public class GSWagon extends StreamWagon {
 
     @Override
     public void fillOutputData(final OutputData outputData) {
-        final Blob blob = storage.create(
-                BlobInfo.newBuilder(getBucketName(), outputData.getResource().getName())
-                        .build(),
-                new byte[0]);
+        final Blob blob = storage.create(BlobInfo.newBuilder(getBucketName(),
+                prefix + outputData.getResource().getName()).build());
 
         final OutputStream outputStream = Channels.newOutputStream(blob.writer());
         outputData.setOutputStream(outputStream);
     }
 
     @Override
-    protected void openConnectionInternal() throws ConnectionException {
-        if (!"/".equals(getRepository().getBasedir())) {
-            throw new ConnectionException("Not supported: Url contains path");
-        }
+    protected void openConnectionInternal() {
+        if ("/".equals(getRepository().getBasedir()))
+            prefix = "";
+        else
+            prefix = getRepository().getBasedir().substring(1);
+
+        if (!prefix.endsWith("/"))
+            prefix += '/';
     }
 
     @Override
