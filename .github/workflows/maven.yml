@@ -9,9 +9,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Build with Maven
-      steps:
-        - name: Resolve Dependencies
-          run: mvn dependency:resolve dependency:resolve-plugins
-        - name: Test
-          run: mvn test
+    - name: Resolve Dependencies
+      run: mvn dependency:resolve dependency:resolve-plugins
+    - name: Test
+      run: mvn test
