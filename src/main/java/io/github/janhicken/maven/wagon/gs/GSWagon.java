@@ -1,5 +1,6 @@
 package io.github.janhicken.maven.wagon.gs;
 
+import com.google.cloud.Tuple;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
@@ -11,10 +12,10 @@ import org.apache.maven.wagon.*;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.channels.Channels;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.StreamSupport;
 
 /**
@@ -59,26 +60,21 @@ public class GSWagon extends StreamWagon {
     @Override
     public List<String> getFileList(final String destinationDirectory) throws ResourceDoesNotExistException {
         final int offset = destinationDirectory.isEmpty() ? 0 : 1;
-        final Set<String> files = StreamSupport.stream(storage.list(getBucketName()).iterateAll().spliterator(), false)
+        final Set<String> blobs = StreamSupport.stream(storage.list(getBucketName()).iterateAll().spliterator(), false)
                 .limit(DEFAULT_BUFFER_SIZE)
                 .map(Blob::getName)
                 .filter(name -> name.startsWith(destinationDirectory))
-                .map(name -> name.substring(destinationDirectory.length() + offset))
                 .collect(Collectors.toSet());
 
-        final Set<String> directories = StreamSupport.stream(storage.list(getBucketName()).iterateAll().spliterator(), false)
-                .limit(DEFAULT_BUFFER_SIZE)
-                .map(Blob::getName)
-                .filter(name -> name.startsWith(destinationDirectory))
+        final Set<String> files = blobs.stream()
+                .map(name -> name.substring(destinationDirectory.length() + offset))
+                .collect(Collectors.toSet());
+        final Set<String> directories = blobs.stream()
                 .filter(name -> name.indexOf('/') > 0)
-                .flatMap(name -> {
-                    final Set<String> d = new HashSet<>();
-                    int i = 0;
-                    while ((i = name.indexOf('/', i + 1)) > 0) {
-                        d.add(name.substring(0, i + 1));
-                    }
-                    return d.stream();
-                })
+                .flatMap(name -> IntStream.range(0, name.length())
+                        .mapToObj(i -> Tuple.of(name.charAt(i), i))
+                        .filter(t -> t.x() == '/')
+                        .map(t -> name.substring(0, t.y() + 1)))
                 .collect(Collectors.toSet());
 
         if (files.isEmpty())
