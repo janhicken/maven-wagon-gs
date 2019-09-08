@@ -29,11 +29,6 @@ public class GSWagonTest extends StreamingWagonTestCase {
     }
 
     @Override
-    protected int getTestRepositoryPort() {
-        return 0;
-    }
-
-    @Override
     protected void setupWagonTestingFixtures() {
         GSWagon.setStorage(LOCAL_STORAGE);
     }
