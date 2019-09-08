@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <component-set>
     <components>
         <component>
             <role>org.apache.maven.wagon.Wagon</role>
             <role-hint>gs</role-hint>
             <implementation>io.github.janhicken.maven.wagon.gs.GSWagon</implementation>
-            <instantiation-strategy>per-lookup</instantiation-strategy>
+            <instantiation-strategy>singleton</instantiation-strategy>
         </component>
     </components>
 </component-set>

@@ -101,11 +101,7 @@ public class GSWagon extends StreamWagon {
 
     @Override
     protected void openConnectionInternal() {
-        if ("/".equals(getRepository().getBasedir()))
-            prefix = "";
-        else
-            prefix = getRepository().getBasedir().substring(1);
-
+        prefix = getRepository().getBasedir().substring(1);
         if (!prefix.endsWith("/"))
             prefix += '/';
     }
