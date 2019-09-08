@@ -9,7 +9,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Resolve Dependencies
-      run: mvn dependency:resolve dependency:resolve-plugins
-    - name: Test
-      run: mvn test
+    - name: Resolve dependencies
+      run: mvn --batch-mode --show-version dependency:resolve dependency:resolve-plugins
+    - name: Run tests
+      run: mvn --batch-mode --show-version test
