@@ -6,8 +6,10 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.ImmutableList;
-import org.apache.maven.wagon.*;
+import org.apache.maven.wagon.InputData;
+import org.apache.maven.wagon.OutputData;
+import org.apache.maven.wagon.ResourceDoesNotExistException;
+import org.apache.maven.wagon.StreamWagon;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -16,6 +18,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
@@ -73,21 +76,17 @@ public class GSWagon extends StreamWagon {
         final Set<String> files = blobs.stream()
                 .map(name -> name.substring(destinationDirectory.length() + offset))
                 .collect(Collectors.toSet());
-        final Set<String> directories = blobs.stream()
+        final Stream<String> directories = blobs.stream()
                 .filter(name -> name.indexOf('/') > 0)
                 .flatMap(name -> IntStream.range(0, name.length())
                         .mapToObj(i -> Tuple.of(name.charAt(i), i))
                         .filter(t -> t.x() == '/')
-                        .map(t -> name.substring(0, t.y() + 1)))
-                .collect(Collectors.toSet());
+                        .map(t -> name.substring(0, t.y() + 1)));
 
         if (files.isEmpty())
             throw new ResourceDoesNotExistException(String.format("Directory %s does not exist", destinationDirectory));
         else
-            return ImmutableList.<String>builder()
-                    .addAll(files)
-                    .addAll(directories)
-                    .build();
+            return Stream.concat(files.stream(), directories).collect(Collectors.toList());
     }
 
     @Override
