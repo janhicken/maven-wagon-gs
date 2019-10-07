@@ -48,7 +48,7 @@ public class GSWagon extends StreamWagon {
         final Blob blob = storage.get(getBucketName(), prefix + inputData.getResource().getName());
         if (blob == null) {
             throw new ResourceDoesNotExistException(String.format("File not found: gs://%s/%s",
-                    getBucketName(), inputData.getResource().getName()));
+                getBucketName(), prefix + inputData.getResource().getName()));
         }
 
         final InputStream inputStream = Channels.newInputStream(blob.reader());
@@ -101,7 +101,7 @@ public class GSWagon extends StreamWagon {
     @Override
     protected void openConnectionInternal() {
         prefix = getRepository().getBasedir().substring(1);
-        if (!prefix.endsWith("/"))
+        if (!prefix.isEmpty() && !prefix.endsWith("/"))
             prefix += '/';
     }
 
