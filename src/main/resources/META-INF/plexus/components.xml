@@ -5,7 +5,7 @@
             <role>org.apache.maven.wagon.Wagon</role>
             <role-hint>gs</role-hint>
             <implementation>io.github.janhicken.maven.wagon.gs.GSWagon</implementation>
-            <instantiation-strategy>singleton</instantiation-strategy>
+            <instantiation-strategy>per-lookup</instantiation-strategy>
         </component>
     </components>
 </component-set>
