@@ -5,11 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK
-      uses: actions/setup-java@v1
+    - uses: actions/setup-java@v2
       with:
+        cache: maven
+        distribution: adopt
         java-version: 11
-    - name: Resolve dependencies
-      run: mvn --batch-mode --show-version dependency:resolve dependency:resolve-plugins
-    - name: Run tests
+    - name: Test
       run: mvn --batch-mode --show-version test
