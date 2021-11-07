@@ -90,6 +90,10 @@
             <artifactId>google-cloud-nio</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
