@@ -6,11 +6,7 @@ import com.google.common.collect.Streams;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.channels.Channels;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -28,6 +24,7 @@ import org.apache.maven.wagon.StreamWagon;
  */
 public class GSWagon extends StreamWagon {
 
+  final MimeMapper mimeMapper = new MimeMapper();
   final Storage storage;
   String prefix;
 
@@ -85,8 +82,8 @@ public class GSWagon extends StreamWagon {
             .collect(Collectors.toUnmodifiableSet());
     final Set<String> directories =
         blobs.stream()
-            .flatMap(GSWagon::parentDirectories)
-            .map(s -> s + '/')
+            .flatMap(pathStr -> Streams.stream(new ParentsIterator(pathStr)))
+            .map(p -> p.toString() + '/')
             .collect(Collectors.toUnmodifiableSet());
 
     if (blobs.isEmpty())
@@ -97,40 +94,17 @@ public class GSWagon extends StreamWagon {
           .collect(Collectors.toUnmodifiableList());
   }
 
-  static Stream<String> parentDirectories(final String pathStr) {
-    Path path = Paths.get(pathStr);
-    final List<String> results = new ArrayList<>(path.getNameCount());
-    while ((path = path.getParent()) != null) {
-      results.add(path.toString());
-    }
-
-    return results.stream();
-  }
-
   @Override
   public void fillOutputData(final OutputData outputData) {
     final BlobId blobId = resolve(outputData.getResource().getName());
     final BlobInfo.Builder builder = BlobInfo.newBuilder(blobId);
-    detectContentType(outputData.getResource().getName()).ifPresent(builder::setContentType);
+    mimeMapper
+        .getMimeTypeForFileName(outputData.getResource().getName())
+        .ifPresent(builder::setContentType);
     final Blob blob = storage.create(builder.build());
 
     final OutputStream outputStream = Channels.newOutputStream(blob.writer());
     outputData.setOutputStream(outputStream);
-  }
-
-  static Optional<String> detectContentType(final String resourceName) {
-    final var extension = resourceName.substring(resourceName.lastIndexOf('.') + 1);
-    switch (extension) {
-      case "asc":
-      case "sha1":
-        return Optional.of("text/plain");
-      case "jar":
-        return Optional.of("application/java-archive");
-      case "pom":
-        return Optional.of("application/xml");
-      default:
-        return Optional.empty();
-    }
   }
 
   static String ensureTrailingSlash(final String s) {
