@@ -4,6 +4,7 @@ import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.contrib.nio.testing.FakeStorageRpc2;
 import java.time.Instant;
 import org.apache.maven.wagon.StreamingWagonTestCase;
+import org.apache.maven.wagon.Wagon;
 import org.apache.maven.wagon.repository.Repository;
 import org.apache.maven.wagon.resource.Resource;
 
@@ -27,13 +28,13 @@ public class GSWagonTest extends StreamingWagonTestCase {
   }
 
   @Override
-  protected void setupWagonTestingFixtures() {
-    GSWagon.options = LOCAL_STORAGE_OPTIONS;
-  }
-
-  @Override
   protected long getExpectedLastModifiedOnGet(
       final Repository repository, final Resource resource) {
     return UPDATE_TIME.toEpochMilli();
+  }
+
+  @Override
+  protected Wagon getWagon() {
+    return new GSWagon(LOCAL_STORAGE_OPTIONS);
   }
 }

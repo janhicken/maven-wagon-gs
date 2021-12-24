@@ -28,10 +28,16 @@ import org.apache.maven.wagon.StreamWagon;
  */
 public class GSWagon extends StreamWagon {
 
-  static StorageOptions options = null;
-
-  Storage storage;
+  final Storage storage;
   String prefix;
+
+  public GSWagon() {
+    this(StorageOptions.getDefaultInstance());
+  }
+
+  public GSWagon(final StorageOptions options) {
+    this.storage = options.getService();
+  }
 
   /** @return the bucket name for artifact storage, e. g. {@code "my-bucket"} */
   public String getBucketName() {
@@ -68,11 +74,9 @@ public class GSWagon extends StreamWagon {
   }
 
   @Override
-  public List<String> getFileList(String destinationDirectory)
+  public List<String> getFileList(final String destinationDirectory)
       throws ResourceDoesNotExistException {
-    if (!destinationDirectory.isEmpty() && !destinationDirectory.endsWith("/"))
-      destinationDirectory += '/';
-    final var listPrefix = prefix + destinationDirectory;
+    final var listPrefix = prefix + ensureTrailingSlash(destinationDirectory);
     final var list = storage.list(getBucketName(), BlobListOption.prefix(listPrefix));
     final Set<String> blobs =
         Streams.stream(list.iterateAll())
@@ -129,15 +133,19 @@ public class GSWagon extends StreamWagon {
     }
   }
 
-  @Override
-  protected void openConnectionInternal() {
-    storage = (options == null ? StorageOptions.getDefaultInstance() : options).getService();
-    prefix = getRepository().getBasedir().substring(1);
-    if (!prefix.isEmpty() && !prefix.endsWith("/")) prefix += '/';
+  static String ensureTrailingSlash(final String s) {
+    if (!s.isEmpty() && s.charAt(s.length() - 1) != '/') {
+      return s + '/';
+    } else {
+      return s;
+    }
   }
 
   @Override
-  public void closeConnection() {
-    storage = null;
+  protected void openConnectionInternal() {
+    prefix = ensureTrailingSlash(getRepository().getBasedir().substring(1));
   }
+
+  @Override
+  public void closeConnection() {}
 }
