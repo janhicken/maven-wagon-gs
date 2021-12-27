@@ -13,7 +13,7 @@
         <maven.compiler.release>11</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <wagon.version>3.4.3</wagon.version>
+        <wagon.version>3.5.1</wagon.version>
     </properties>
 
     <licenses>
