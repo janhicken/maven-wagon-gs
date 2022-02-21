@@ -3,6 +3,11 @@ package io.github.janhicken.maven.wagon.gs;
 import com.google.cloud.storage.*;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.common.collect.Streams;
+import org.apache.maven.wagon.InputData;
+import org.apache.maven.wagon.OutputData;
+import org.apache.maven.wagon.ResourceDoesNotExistException;
+import org.apache.maven.wagon.StreamWagon;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.channels.Channels;
@@ -10,10 +15,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import org.apache.maven.wagon.InputData;
-import org.apache.maven.wagon.OutputData;
-import org.apache.maven.wagon.ResourceDoesNotExistException;
-import org.apache.maven.wagon.StreamWagon;
 
 /**
  * Maven wagon with Google Cloud Storage as backend.
@@ -36,7 +37,11 @@ public class GSWagon extends StreamWagon {
     this.storage = options.getService();
   }
 
-  /** @return the bucket name for artifact storage, e. g. {@code "my-bucket"} */
+  /**
+   * Returns the bucket name used for artifact storage, e.g. {@code "my-bucket"}.
+   *
+   * @return the bucket name
+   */
   public String getBucketName() {
     return getRepository().getHost();
   }
@@ -121,5 +126,6 @@ public class GSWagon extends StreamWagon {
   }
 
   @Override
-  public void closeConnection() {}
+  public void closeConnection() {
+  }
 }
