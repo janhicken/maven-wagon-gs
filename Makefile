@@ -10,7 +10,6 @@ test:
 	mvn $(MVN_FLAGS) test
 
 release:
-	mvn $(MVN_FLAGS) release:prepare
-	mvn $(MVN_FLAGS) release:perform
+	mvn $(MVN_FLAGS) release:prepare release:perform
 
 ci: test
