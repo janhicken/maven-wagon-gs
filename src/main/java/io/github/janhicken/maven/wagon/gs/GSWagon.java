@@ -1,7 +1,11 @@
 package io.github.janhicken.maven.wagon.gs;
 
-import com.google.cloud.storage.*;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
+import com.google.cloud.storage.StorageOptions;
 import com.google.common.collect.Streams;
 import java.io.InputStream;
 import java.io.OutputStream;
