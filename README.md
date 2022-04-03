@@ -20,7 +20,7 @@ Here is an example configuration of the above:
         <extension>
             <groupId>io.github.janhicken</groupId>
             <artifactId>maven.wagon-gs</artifactId>
-            <version>1.5</version>
+            <version>1.6</version>
         </extension>
     </extensions>
 </build>
