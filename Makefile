@@ -12,6 +12,6 @@ test:
 release:
 	mvn $(MVN_FLAGS) release:prepare
 	git push --follow-tags --atomic
-	mvn $(MVN_FLAGS) release:perform
+	mvn $(MVN_FLAGS) release:perform release:clean
 
 ci: test
