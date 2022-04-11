@@ -7,7 +7,7 @@ jobs:
       MVN_FLAGS: --batch-mode --show-version
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-java@v2
+    - uses: actions/setup-java@v3
       with:
         cache: maven
         distribution: adopt
