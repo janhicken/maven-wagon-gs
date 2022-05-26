@@ -3,7 +3,7 @@ package io.github.janhicken.maven.wagon.gs;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Iterator;
-import java.util.Optional;
+import java.util.NoSuchElementException;
 import javax.annotation.Nullable;
 
 /** An {@link Iterator} for all parent directories of a given {@link Path} */
@@ -28,8 +28,10 @@ public class ParentsIterator implements Iterator<Path> {
 
   @Override
   public synchronized Path next() {
+    if (parent == null) throw new NoSuchElementException();
+
     path = parent;
-    if (path != null) parent = path.getParent();
-    return Optional.ofNullable(path).orElseThrow();
+    parent = path.getParent();
+    return path;
   }
 }
