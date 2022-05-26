@@ -88,18 +88,15 @@ public class GSWagon extends StreamWagon {
             .map(Blob::getName)
             .map(s -> s.substring(listPrefix.length()))
             .collect(Collectors.toUnmodifiableSet());
-    final Set<String> directories =
+    final Stream<String> directories =
         blobs.stream()
             .flatMap(pathStr -> Streams.stream(new ParentsIterator(pathStr)))
-            .map(p -> p.toString() + '/')
-            .collect(Collectors.toUnmodifiableSet());
+            .map(p -> p.toString() + '/');
 
     if (blobs.isEmpty())
       throw new ResourceDoesNotExistException(
           String.format("Directory %s does not exist", destinationDirectory));
-    else
-      return Stream.concat(blobs.stream(), directories.stream())
-          .collect(Collectors.toUnmodifiableList());
+    else return Stream.concat(blobs.stream(), directories).collect(Collectors.toUnmodifiableList());
   }
 
   @Override
