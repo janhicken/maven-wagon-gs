@@ -6,7 +6,7 @@
     <artifactId>maven-wagon-gs</artifactId>
     <name>GCS Maven Wagon</name>
     <description>Maven Wagon that can resolve and retrieve artifacts from Google Cloud Storage</description>
-    <version>1.7.4</version>
+    <version>1.7.5-SNAPSHOT</version>
     <url>https://www.github.com/janhicken/maven-wagon-gs</url>
 
     <properties>
@@ -28,7 +28,7 @@
         <connection>scm:git:git://git@github.com/janhicken/maven-wagon-gs.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/janhicken/maven-wagon-gs.git</developerConnection>
         <url>https://github.com/janhicken/maven-wagon-gs</url>
-      <tag>v1.7.4</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <developers>
