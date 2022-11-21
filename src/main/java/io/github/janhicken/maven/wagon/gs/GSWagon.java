@@ -70,7 +70,9 @@ public class GSWagon extends StreamWagon {
     final InputStream inputStream = Channels.newInputStream(blob.reader());
     inputData.setInputStream(inputStream);
     inputData.getResource().setContentLength(blob.getSize());
-    inputData.getResource().setLastModified(blob.getUpdateTime());
+    inputData
+        .getResource()
+        .setLastModified(blob.getUpdateTimeOffsetDateTime().toInstant().toEpochMilli());
   }
 
   @Override
