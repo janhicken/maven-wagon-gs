@@ -18,6 +18,7 @@ import org.apache.maven.wagon.InputData;
 import org.apache.maven.wagon.OutputData;
 import org.apache.maven.wagon.ResourceDoesNotExistException;
 import org.apache.maven.wagon.StreamWagon;
+import org.apache.maven.wagon.resource.Resource;
 
 /**
  * Maven wagon with Google Cloud Storage as backend.
@@ -61,7 +62,8 @@ public class GSWagon extends StreamWagon {
 
   @Override
   public void fillInputData(final InputData inputData) throws ResourceDoesNotExistException {
-    final BlobId blobId = resolve(inputData.getResource().getName());
+    final Resource resource = inputData.getResource();
+    final BlobId blobId = resolve(resource.getName());
     final Blob blob = storage.get(blobId);
     if (blob == null) {
       throw new ResourceDoesNotExistException("File not found: " + blobId.toGsUtilUri());
@@ -69,10 +71,8 @@ public class GSWagon extends StreamWagon {
 
     final InputStream inputStream = Channels.newInputStream(blob.reader());
     inputData.setInputStream(inputStream);
-    inputData.getResource().setContentLength(blob.getSize());
-    inputData
-        .getResource()
-        .setLastModified(blob.getUpdateTimeOffsetDateTime().toInstant().toEpochMilli());
+    resource.setContentLength(blob.getSize());
+    resource.setLastModified(blob.getUpdateTimeOffsetDateTime().toInstant().toEpochMilli());
   }
 
   @Override
