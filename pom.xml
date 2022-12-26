@@ -15,7 +15,7 @@
 
         <errorprone.version>2.16</errorprone.version>
         <slf4j.version>2.0.6</slf4j.version>
-        <wagon.version>3.5.2</wagon.version>
+        <wagon.version>3.5.3</wagon.version>
     </properties>
 
     <licenses>
