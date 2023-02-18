@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.apache.maven.wagon.ConnectionException;
 import org.apache.maven.wagon.InputData;
 import org.apache.maven.wagon.OutputData;
 import org.apache.maven.wagon.ResourceDoesNotExistException;
@@ -128,5 +129,11 @@ public class GSWagon extends StreamWagon {
   }
 
   @Override
-  public void closeConnection() {}
+  public void closeConnection() throws ConnectionException {
+    try {
+      storage.close();
+    } catch (final Exception e) {
+      throw new ConnectionException("Error closing connection", e);
+    }
+  }
 }
