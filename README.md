@@ -4,6 +4,16 @@ This Maven [wagon](http://maven.apache.org/wagon/) extension allows you to resol
 
     gs://mybucket/com/mygroup/myartifact/0.1/...
 
+## Why this instead of [Artifact Registry](https://cloud.google.com/artifact-registry)?
+
+As of today (2023-03-07), the Artifact Registry storage costs are about 5x
+higher than using plain Google Cloud Storage.
+
+As long as you do not require a [version
+policy](https://cloud.google.com/artifact-registry/docs/java#policy) on the
+repository level, using a bucket instead provides similar features.
+
+
 ## Adding to a project 
 
 You need to do the following:
