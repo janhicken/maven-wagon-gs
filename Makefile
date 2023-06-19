@@ -1,17 +1,30 @@
-.PHONY: build fmt test release ci
+SHELL := /usr/bin/env bash
 
-build:
-	mvn $(MVN_FLAGS) compile
+.DEFAULT_TARGET: all
+.PHONY: all
+all:
+	bazel build //...
 
+.PHONY: lint
+lint:
+	bazel run //:java_fmt -- --dry-run --set-exit-if-changed @<(find $$PWD/src -type f -name *.java)
+
+.PHONY: fmt
 fmt:
-	mvn $(MVN_FLAGS) spotless:apply
+	bazel run //:java_fmt -- --replace @<(find $$PWD/src -type f -name *.java)
 
+.PHONY: test
 test:
-	mvn $(MVN_FLAGS) test
+	bazel test //... --test_output=errors
 
+.PHONY: release
 release:
-	mvn $(MVN_FLAGS) release:prepare
+	scripts/release.sh
 	git push --follow-tags --atomic
-	mvn $(MVN_FLAGS) release:perform release:clean
 
-ci: test
+.PHONY: ci
+ci: lint test
+
+.PHONY: outdated
+outdated:
+	bazel run @maven//:outdated

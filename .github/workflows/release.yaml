@@ -12,6 +12,15 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: ~/.cache/bazel
+          key: ${{ runner.os }}-bazel-${{ hashFiles('WORKSPACE') }}
+          restore-keys: ${{ runner.os }}-bazel-
+      - run: scripts/publish.sh maven_central
+        env:
+          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}
+          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
       - run: gh release create ${{ github.ref_name }} --generate-notes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -6,17 +6,19 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageOptions;
-import com.google.common.collect.Streams;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.channels.Channels;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 import org.apache.maven.wagon.ConnectionException;
 import org.apache.maven.wagon.InputData;
 import org.apache.maven.wagon.OutputData;
+import org.apache.maven.wagon.PathUtils;
 import org.apache.maven.wagon.ResourceDoesNotExistException;
 import org.apache.maven.wagon.StreamWagon;
 import org.apache.maven.wagon.resource.Resource;
@@ -87,19 +89,19 @@ public class GSWagon extends StreamWagon {
     final var listPrefix = prefix + ensureTrailingSlash(destinationDirectory);
     final var list = storage.list(getBucketName(), BlobListOption.prefix(listPrefix));
     final Set<String> blobs =
-        Streams.stream(list.iterateAll())
+        StreamSupport.stream(list.iterateAll().spliterator(), false)
             .map(Blob::getName)
             .map(s -> s.substring(listPrefix.length()))
             .collect(Collectors.toUnmodifiableSet());
-    final Stream<String> directories =
-        blobs.stream()
-            .flatMap(pathStr -> Streams.stream(new ParentsIterator(pathStr)))
-            .map(p -> p.toString() + '/');
-
     if (blobs.isEmpty())
       throw new ResourceDoesNotExistException(
           String.format("Directory %s does not exist", destinationDirectory));
-    else return Stream.concat(blobs.stream(), directories).collect(Collectors.toUnmodifiableList());
+
+    final Stream<String> directories =
+        blobs.stream()
+            .flatMap(pathStr -> Arrays.stream(PathUtils.dirnames(pathStr)))
+            .map(p -> p + '/');
+    return Stream.concat(blobs.stream(), directories).collect(Collectors.toUnmodifiableList());
   }
 
   @Override

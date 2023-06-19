@@ -3,17 +3,11 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java: [11, 17]
-    env:
-      MVN_FLAGS: --batch-mode --show-version
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
+    - uses: actions/cache@v3
       with:
-        cache: maven
-        distribution: temurin
-        java-version: ${{ matrix.java }}
-    - name: make ci
-      run: make ci
+        path: ~/.cache/bazel
+        key: ${{ runner.os }}-bazel-${{ hashFiles('WORKSPACE') }}
+        restore-keys: ${{ runner.os }}-bazel-
+    - run: make ci

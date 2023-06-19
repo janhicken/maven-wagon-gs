@@ -10,12 +10,13 @@ import org.apache.maven.wagon.resource.Resource;
 
 public class GSWagonTest extends StreamingWagonTestCase {
 
-  private static final Instant UPDATE_TIME = Instant.now();
-  private static final StorageOptions LOCAL_STORAGE_OPTIONS =
+  final Instant updateTime = Instant.now();
+  final StorageOptions storageOptions =
       StorageOptions.newBuilder()
           .setProjectId("dummy-project-id-for-testing")
-          .setServiceRpcFactory(options -> new FakeStorageRpc2(true, UPDATE_TIME))
+          .setServiceRpcFactory(options -> new FakeStorageRpc2(true, updateTime))
           .build();
+  final GSWagon wagon = new GSWagon(storageOptions);
 
   @Override
   protected String getTestRepositoryUrl() {
@@ -30,11 +31,18 @@ public class GSWagonTest extends StreamingWagonTestCase {
   @Override
   protected long getExpectedLastModifiedOnGet(
       final Repository repository, final Resource resource) {
-    return UPDATE_TIME.toEpochMilli();
+    return updateTime.toEpochMilli();
   }
 
   @Override
   protected Wagon getWagon() {
-    return new GSWagon(LOCAL_STORAGE_OPTIONS);
+    return wagon;
+  }
+
+  public void testLookupByProtocol() throws Exception {
+    final var result = lookup(Wagon.ROLE, getProtocol());
+    assertTrue(
+        String.format("Expected an instance of GSWagon, got: %s", result.getClass().getName()),
+        result instanceof GSWagon);
   }
 }
