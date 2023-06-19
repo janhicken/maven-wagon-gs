@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.Properties;
 
-public class MimeMapper {
+class MimeMapper {
 
   static final String PROPERTIES_NAME = "mime.properties";
 

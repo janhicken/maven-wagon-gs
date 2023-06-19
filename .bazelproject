@@ -1,0 +1,10 @@
+directories:
+  .
+
+workspace_type: java
+
+targets:
+  //src/test/java/io/github/janhicken/maven/wagon/gs:GSWagonTest
+
+test_sources:
+  src/test/java

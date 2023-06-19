@@ -1,7 +1,5 @@
-.classpath
-.project
-.settings/
-.vscode/
-target/
-.idea/
-*.iml
+# Bazel
+/bazel-*
+
+# IntelliJ IDEA
+.ijwb/
