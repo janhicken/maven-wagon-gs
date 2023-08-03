@@ -13,7 +13,8 @@ java_test(
     ],
     deps = [
         "//src/main/java/io/github/janhicken/maven/wagon/gs:GSWagon",
-        "//src/test/java/com/google/cloud/storage/contrib/nio/testing:FakeStorageRpc2",
+        "@maven//:com_google_apis_google_api_services_storage",
+        "@maven//:com_google_cloud_google_cloud_nio",
         "@maven//:com_google_cloud_google_cloud_storage",
         "@maven//:org_apache_maven_wagon_wagon_provider_api",
         "@maven//:org_apache_maven_wagon_wagon_provider_test",
