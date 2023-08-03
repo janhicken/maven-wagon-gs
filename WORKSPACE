@@ -33,7 +33,7 @@ maven_install(
 
         # Google Cloud Storage
         "com.google.cloud:google-cloud-storage:2.25.0",
-        "com.google.cloud:google-cloud-nio:0.126.19",
+        "com.google.cloud:google-cloud-nio:0.127.0",
 
         # Logging
         "org.slf4j:slf4j-api:%s" % SLF4J_VERSION,
