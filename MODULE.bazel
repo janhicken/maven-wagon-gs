@@ -1,0 +1,37 @@
+module(name = "maven_wagon_gs")
+
+bazel_dep(name = "rules_jvm_external", version = "5.3")
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+XTEXT_VERSION = "2.31.0"
+
+MAVEN_WAGON_VERSION = "3.5.3"
+
+SLF4J_VERSION = "2.0.7"
+
+maven.install(
+    artifacts = [
+        # Maven Wagon
+        "org.apache.maven.wagon:wagon-provider-api:%s" % MAVEN_WAGON_VERSION,
+        "org.apache.maven.wagon:wagon-provider-test:%s" % MAVEN_WAGON_VERSION,
+
+        # Google Cloud Storage
+        "com.google.cloud:google-cloud-storage:2.25.0",
+        "com.google.cloud:google-cloud-nio:0.127.0",
+
+        # Logging
+        "org.slf4j:slf4j-api:%s" % SLF4J_VERSION,
+        "org.slf4j:slf4j-jdk14:%s" % SLF4J_VERSION,
+
+        # Dev tools
+        "com.google.googlejavaformat:google-java-format:1.17.0",
+    ],
+    excluded_artifacts = [
+        "com.google.collections:google-collections",
+    ],
+    lock_file = "//:maven_lock.json",
+    fetch_sources = True,
+    repositories = ["https://repo1.maven.org/maven2"],
+    version_conflict_policy = "pinned",
+)
+use_repo(maven, "maven")
