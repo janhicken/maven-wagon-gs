@@ -16,7 +16,7 @@ maven.install(
         "org.apache.maven.wagon:wagon-provider-test:%s" % MAVEN_WAGON_VERSION,
 
         # Google Cloud Storage
-        "com.google.cloud:google-cloud-storage:2.25.0",
+        "com.google.cloud:google-cloud-storage:2.26.0",
         "com.google.cloud:google-cloud-nio:0.127.0",
 
         # Logging
@@ -34,4 +34,4 @@ maven.install(
     repositories = ["https://repo1.maven.org/maven2"],
     version_conflict_policy = "pinned",
 )
-use_repo(maven, "maven")
+use_repo(maven, "maven", "unpinned_maven")
