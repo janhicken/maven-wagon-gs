@@ -28,3 +28,7 @@ ci: lint test
 .PHONY: outdated
 outdated:
 	bazel run @maven//:outdated
+
+.PHONY: pin
+pin:
+	bazel run @unpinned_maven//:pin
