@@ -28,7 +28,7 @@ java_test(
 # Depends on the full transitive clojure of artifacts.
 # This causes all dependencies to be listed in IntelliJ's external libraries, which is useful
 # for debugging and browsing the libraries' code
-java_library(
+java_binary(
     name = "Dummy",
     srcs = [":Dummy.java"],
     deps = [
