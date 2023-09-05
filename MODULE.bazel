@@ -8,7 +8,7 @@ XTEXT_VERSION = "2.31.0"
 
 MAVEN_WAGON_VERSION = "3.5.3"
 
-SLF4J_VERSION = "2.0.7"
+SLF4J_VERSION = "2.0.9"
 
 maven.install(
     artifacts = [
