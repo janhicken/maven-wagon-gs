@@ -1,5 +1,8 @@
 SHELL := /usr/bin/env bash
 
+LOCAL_REPO_URL		= file://$(HOME)/.m2/repository
+SONATYPE_REPO_URL	= https://oss.sonatype.org/service/local/staging/deploy/maven2
+
 .DEFAULT_TARGET: all
 .PHONY: all
 all:
@@ -16,6 +19,14 @@ fmt:
 .PHONY: test
 test:
 	bazel test //... --test_output=errors
+
+.PHONY: install
+install:
+	bazel run //:maven.publish --define maven_repo=$(LOCAL_REPO_URL)
+
+.PHONY: deploy
+deploy:
+	bazel run //:maven.publish --define maven_repo=$(SONATYPE_REPO_URL) --define gpg_sign=True
 
 .PHONY: release
 release:

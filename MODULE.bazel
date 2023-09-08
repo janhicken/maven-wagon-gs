@@ -2,6 +2,12 @@ module(name = "maven_wagon_gs")
 
 bazel_dep(name = "rules_java", version = "6.4.0")
 bazel_dep(name = "rules_jvm_external", version = "5.3")
+single_version_override(
+    module_name = "rules_jvm_external",
+    patches = ["//patches:0001-Allow-passing-sensitive-credentials-for-java_export-.patch"],
+    patch_strip = 1,
+)
+
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 
 XTEXT_VERSION = "2.31.0"
