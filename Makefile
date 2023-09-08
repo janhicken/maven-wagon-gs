@@ -18,7 +18,7 @@ fmt:
 
 .PHONY: test
 test:
-	bazel test //... --test_output=errors
+	bazel test //...
 
 .PHONY: install
 install:
