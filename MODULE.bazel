@@ -10,8 +10,6 @@ single_version_override(
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 
-XTEXT_VERSION = "2.31.0"
-
 MAVEN_WAGON_VERSION = "3.5.3"
 
 SLF4J_VERSION = "2.0.9"
