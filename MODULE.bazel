@@ -1,6 +1,5 @@
 module(name = "maven_wagon_gs")
 
-bazel_dep(name = "rules_java", version = "6.4.0")
 bazel_dep(name = "rules_jvm_external", version = "5.3")
 single_version_override(
     module_name = "rules_jvm_external",
