@@ -11,7 +11,7 @@ maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 
 MAVEN_WAGON_VERSION = "3.5.3"
 
-SLF4J_VERSION = "2.0.9"
+SLF4J_VERSION = "2.0.11"
 
 maven.install(
     artifacts = [
