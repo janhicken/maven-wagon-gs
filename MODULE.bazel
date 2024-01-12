@@ -28,7 +28,7 @@ maven.install(
         "org.slf4j:slf4j-jdk14:%s" % SLF4J_VERSION,
 
         # Dev tools
-        "com.google.googlejavaformat:google-java-format:1.18.1",
+        "com.google.googlejavaformat:google-java-format:1.19.2",
     ],
     excluded_artifacts = [
         "com.google.collections:google-collections",
