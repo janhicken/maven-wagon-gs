@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "7d5515eb8d2741bda68f4e93cac35af222e6356b24f46a62deca50424e0d7838",
+  "moduleFileHash": "dcad7288bc47d83986e8a35cf4a4ca6c810ab934f7bb10117bfa087091dc6049",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -48,8 +48,8 @@
                   "org.apache.maven.wagon:wagon-provider-test:3.5.3",
                   "com.google.cloud:google-cloud-storage:2.31.0",
                   "com.google.cloud:google-cloud-nio:0.127.9",
-                  "org.slf4j:slf4j-api:2.0.11",
-                  "org.slf4j:slf4j-jdk14:2.0.11",
+                  "org.slf4j:slf4j-api:2.0.12",
+                  "org.slf4j:slf4j-jdk14:2.0.12",
                   "com.google.googlejavaformat:google-java-format:1.19.2"
                 ],
                 "excluded_artifacts": [
@@ -2071,7 +2071,7 @@
         "bzlTransitiveDigest": "WLH6tV/jGiZ73lPBSYWRhoilLeqSLs6vQqjK4ph6NG0=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_lock.json": "a8f0b8c5bafc70f113a2baaff30ef06f4b5c975a07d52dc01bfdb36aad42fa2b"
+          "@@//maven_lock.json": "e8433d693ff9c08b3d123e06dfff148d41665e67dbb0f61adbed38b45dc7935c"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -2186,15 +2186,15 @@
               "downloaded_file_path": "v1/com/google/api/grpc/proto-google-common-protos/2.30.0/proto-google-common-protos-2.30.0.jar"
             }
           },
-          "org_slf4j_slf4j_jdk14_jar_sources_2_0_11": {
+          "org_slf4j_slf4j_jdk14_jar_sources_2_0_12": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "66146380abf8465c53599d76b480167476ae2f5ce795ef82109c5cdb83d6bea3",
+              "sha256": "a4bea624bea280720dc11094deb6ff405ac4e7554d1b5299ea9eaf9609df04b0",
               "urls": [
-                "https://repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/2.0.11/slf4j-jdk14-2.0.11-sources.jar"
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/2.0.12/slf4j-jdk14-2.0.12-sources.jar"
               ],
-              "downloaded_file_path": "v1/org/slf4j/slf4j-jdk14/2.0.11/slf4j-jdk14-2.0.11-sources.jar"
+              "downloaded_file_path": "v1/org/slf4j/slf4j-jdk14/2.0.12/slf4j-jdk14-2.0.12-sources.jar"
             }
           },
           "io_opencensus_opencensus_api_jar_sources_0_31_1": {
@@ -2261,6 +2261,17 @@
                 "https://repo1.maven.org/maven2/io/grpc/grpc-inprocess/1.60.0/grpc-inprocess-1.60.0-sources.jar"
               ],
               "downloaded_file_path": "v1/io/grpc/grpc-inprocess/1.60.0/grpc-inprocess-1.60.0-sources.jar"
+            }
+          },
+          "org_slf4j_slf4j_api_jar_sources_2_0_12": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "f05052e5924887edee5ba8228d210e763f85032e2b58245a37fa71e049950787",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12-sources.jar"
             }
           },
           "org_apache_commons_commons_lang3_3_12_0": {
@@ -2723,17 +2734,6 @@
                 "https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1-sources.jar"
-            }
-          },
-          "org_slf4j_slf4j_api_jar_sources_2_0_11": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "3c1357260d1c649aa747bc6ba7b78fb6ea1bd2f7e6fabd9c6412e9d5c6e2ea0c",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11-sources.jar"
-              ],
-              "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11-sources.jar"
             }
           },
           "com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava": {
@@ -4265,8 +4265,8 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.31.0\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.9\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.11\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.11\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.12\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.19.2\" }"
               ],
               "fetch_sources": true,
@@ -4524,17 +4524,6 @@
               "downloaded_file_path": "v1/com/google/cloud/google-cloud-core/2.22.0/google-cloud-core-2.22.0.jar"
             }
           },
-          "org_slf4j_slf4j_api_2_0_11": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "ce0e71d673acb9036bb55d0244b261cf033f8e4c1245f14f931dfb1937dd4c95",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11.jar"
-              ],
-              "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11.jar"
-            }
-          },
           "software_amazon_awssdk_aws_query_protocol_2_20_128": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4544,6 +4533,17 @@
                 "https://repo1.maven.org/maven2/software/amazon/awssdk/aws-query-protocol/2.20.128/aws-query-protocol-2.20.128.jar"
               ],
               "downloaded_file_path": "v1/software/amazon/awssdk/aws-query-protocol/2.20.128/aws-query-protocol-2.20.128.jar"
+            }
+          },
+          "org_slf4j_slf4j_api_2_0_12": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a79502b8abdfbd722846a27691226a4088682d6d35654f9b80e2a9ccacf7ed47",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar"
+              ],
+              "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar"
             }
           },
           "org_objenesis_objenesis_2_6": {
@@ -4625,8 +4625,8 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.31.0\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.9\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.11\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.11\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.12\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.19.2\" }"
               ],
               "fail_on_missing_checksum": true,
@@ -4716,17 +4716,6 @@
               "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-grpc/2.29.0/google-cloud-core-grpc-2.29.0.jar"
             }
           },
-          "org_slf4j_slf4j_jdk14_2_0_11": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "1ce8ae1f20dec00a0ac08bb92a773168a57651bac69869a457285a5a7c8c7097",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/2.0.11/slf4j-jdk14-2.0.11.jar"
-              ],
-              "downloaded_file_path": "v1/org/slf4j/slf4j-jdk14/2.0.11/slf4j-jdk14-2.0.11.jar"
-            }
-          },
           "com_google_cloud_google_cloud_nio_0_127_9": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4736,6 +4725,17 @@
                 "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.9/google-cloud-nio-0.127.9.jar"
               ],
               "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.9/google-cloud-nio-0.127.9.jar"
+            }
+          },
+          "org_slf4j_slf4j_jdk14_2_0_12": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "26468d004a9cb8575703024e20b29a3839194f0abf1f4f79ee0b21c5d4900efd",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/2.0.12/slf4j-jdk14-2.0.12.jar"
+              ],
+              "downloaded_file_path": "v1/org/slf4j/slf4j-jdk14/2.0.12/slf4j-jdk14-2.0.12.jar"
             }
           },
           "io_perfmark_perfmark_api_jar_sources_0_26_0": {
