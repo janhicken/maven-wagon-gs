@@ -22,5 +22,5 @@ java_binary(
         "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
     ],
     main_class = "com.google.googlejavaformat.java.Main",
-    runtime_deps = ["@maven//:com_google_googlejavaformat_google_java_format"],
+    runtime_deps = ["@maven_wagon_gs_maven//:com_google_googlejavaformat_google_java_format"],
 )

@@ -38,11 +38,11 @@ ci: lint test
 
 .PHONY: outdated
 outdated:
-	bazel run @maven//:outdated
+	bazel run @maven_wagon_gs_maven//:outdated
 
 .PHONY: pin
 pin: maven_lock.json
 
 maven_lock.json: MODULE.bazel
-	bazel run @unpinned_maven//:pin
+	bazel run @unpinned_maven_wagon_gs_maven//:pin
 	chmod -x $@

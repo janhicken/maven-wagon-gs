@@ -9,6 +9,7 @@ MAVEN_WAGON_VERSION = "3.5.3"
 SLF4J_VERSION = "2.0.11"
 
 maven.install(
+    name = "maven_wagon_gs_maven",
     artifacts = [
         # Maven Wagon
         "org.apache.maven.wagon:wagon-provider-api:%s" % MAVEN_WAGON_VERSION,
@@ -33,4 +34,4 @@ maven.install(
     repositories = ["https://repo1.maven.org/maven2"],
     version_conflict_policy = "pinned",
 )
-use_repo(maven, "maven", "unpinned_maven")
+use_repo(maven, "maven_wagon_gs_maven", "unpinned_maven_wagon_gs_maven")

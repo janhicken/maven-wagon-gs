@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "4c1f9a9ab11fd81c2d51931d490b90721f9058c294d298feeae359b65b19a659",
+  "moduleFileHash": "7d5515eb8d2741bda68f4e93cac35af222e6356b24f46a62deca50424e0d7838",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -34,14 +34,15 @@
             "column": 22
           },
           "imports": {
-            "maven": "maven",
-            "unpinned_maven": "unpinned_maven"
+            "maven_wagon_gs_maven": "maven_wagon_gs_maven",
+            "unpinned_maven_wagon_gs_maven": "unpinned_maven_wagon_gs_maven"
           },
           "devImports": [],
           "tags": [
             {
               "tagName": "install",
               "attributeValues": {
+                "name": "maven_wagon_gs_maven",
                 "artifacts": [
                   "org.apache.maven.wagon:wagon-provider-api:3.5.3",
                   "org.apache.maven.wagon:wagon-provider-test:3.5.3",
@@ -2625,53 +2626,6 @@
               "ignore_empty_files": false
             }
           },
-          "unpinned_maven": {
-            "bzlFile": "@@rules_jvm_external~//:coursier.bzl",
-            "ruleClassName": "coursier_fetch",
-            "attributes": {
-              "user_provided_name": "maven",
-              "repositories": [
-                "{ \"repo_url\": \"https://repo1.maven.org/maven2\" }"
-              ],
-              "artifacts": [
-                "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
-                "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.31.0\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.9\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.11\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.11\" }",
-                "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.19.2\" }",
-                "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
-                "{ \"group\": \"com.google.code.gson\", \"artifact\": \"gson\", \"version\": \"2.8.9\" }",
-                "{ \"group\": \"com.google.errorprone\", \"artifact\": \"error_prone_annotations\", \"version\": \"2.3.2\" }",
-                "{ \"group\": \"com.google.j2objc\", \"artifact\": \"j2objc-annotations\", \"version\": \"1.3\" }",
-                "{ \"group\": \"com.google.guava\", \"artifact\": \"guava\", \"version\": \"31.1-jre\" }",
-                "{ \"group\": \"com.google.guava\", \"artifact\": \"guava-testlib\", \"version\": \"31.1-jre\" }",
-                "{ \"group\": \"com.google.truth\", \"artifact\": \"truth\", \"version\": \"1.1.2\" }",
-                "{ \"group\": \"junit\", \"artifact\": \"junit\", \"version\": \"4.13.2\" }",
-                "{ \"group\": \"org.mockito\", \"artifact\": \"mockito-core\", \"version\": \"4.3.1\" }"
-              ],
-              "fail_on_missing_checksum": true,
-              "fetch_sources": true,
-              "fetch_javadoc": false,
-              "excluded_artifacts": [
-                "{ \"group\": \"com.google.collections\", \"artifact\": \"google-collections\" }"
-              ],
-              "generate_compat_repositories": false,
-              "version_conflict_policy": "pinned",
-              "override_targets": {},
-              "strict_visibility": false,
-              "strict_visibility_value": [
-                "@@//visibility:private"
-              ],
-              "maven_install_json": "@@//:maven_lock.json",
-              "resolve_timeout": 600,
-              "use_starlark_android_rules": false,
-              "aar_import_bzl_label": "@build_bazel_rules_android//android:rules.bzl",
-              "duplicate_version_warning": "warn",
-              "ignore_empty_files": false
-            }
-          },
           "io_grpc_grpc_xds_jar_sources_1_60_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4298,6 +4252,43 @@
               "downloaded_file_path": "v1/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.jar"
             }
           },
+          "maven_wagon_gs_maven": {
+            "bzlFile": "@@rules_jvm_external~//:coursier.bzl",
+            "ruleClassName": "pinned_coursier_fetch",
+            "attributes": {
+              "user_provided_name": "maven_wagon_gs_maven",
+              "repositories": [
+                "{ \"repo_url\": \"https://repo1.maven.org/maven2\" }"
+              ],
+              "artifacts": [
+                "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
+                "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.31.0\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.9\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.11\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.11\" }",
+                "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.19.2\" }"
+              ],
+              "fetch_sources": true,
+              "fetch_javadoc": false,
+              "generate_compat_repositories": false,
+              "maven_install_json": "@@//:maven_lock.json",
+              "override_targets": {},
+              "strict_visibility": false,
+              "strict_visibility_value": [
+                "@@//visibility:private"
+              ],
+              "additional_netrc_lines": [],
+              "fail_if_repin_required": false,
+              "use_starlark_android_rules": false,
+              "aar_import_bzl_label": "@build_bazel_rules_android//android:rules.bzl",
+              "duplicate_version_warning": "warn",
+              "excluded_artifacts": [
+                "{ \"group\": \"com.google.collections\", \"artifact\": \"google-collections\" }"
+              ],
+              "repin_instructions": ""
+            }
+          },
           "io_netty_netty_handler_4_1_94_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4487,20 +4478,13 @@
           },
           "maven": {
             "bzlFile": "@@rules_jvm_external~//:coursier.bzl",
-            "ruleClassName": "pinned_coursier_fetch",
+            "ruleClassName": "coursier_fetch",
             "attributes": {
               "user_provided_name": "maven",
               "repositories": [
                 "{ \"repo_url\": \"https://repo1.maven.org/maven2\" }"
               ],
               "artifacts": [
-                "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
-                "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.31.0\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.9\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.11\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.11\" }",
-                "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.19.2\" }",
                 "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
                 "{ \"group\": \"com.google.code.gson\", \"artifact\": \"gson\", \"version\": \"2.8.9\" }",
                 "{ \"group\": \"com.google.errorprone\", \"artifact\": \"error_prone_annotations\", \"version\": \"2.3.2\" }",
@@ -4511,24 +4495,22 @@
                 "{ \"group\": \"junit\", \"artifact\": \"junit\", \"version\": \"4.13.2\" }",
                 "{ \"group\": \"org.mockito\", \"artifact\": \"mockito-core\", \"version\": \"4.3.1\" }"
               ],
-              "fetch_sources": true,
+              "fail_on_missing_checksum": true,
+              "fetch_sources": false,
               "fetch_javadoc": false,
+              "excluded_artifacts": [],
               "generate_compat_repositories": false,
-              "maven_install_json": "@@//:maven_lock.json",
+              "version_conflict_policy": "default",
               "override_targets": {},
               "strict_visibility": false,
               "strict_visibility_value": [
                 "@@//visibility:private"
               ],
-              "additional_netrc_lines": [],
-              "fail_if_repin_required": false,
+              "resolve_timeout": 600,
               "use_starlark_android_rules": false,
               "aar_import_bzl_label": "@build_bazel_rules_android//android:rules.bzl",
               "duplicate_version_warning": "warn",
-              "excluded_artifacts": [
-                "{ \"group\": \"com.google.collections\", \"artifact\": \"google-collections\" }"
-              ],
-              "repin_instructions": ""
+              "ignore_empty_files": false
             }
           },
           "com_google_cloud_google_cloud_core_2_22_0": {
@@ -4628,6 +4610,44 @@
                 "https://repo1.maven.org/maven2/io/grpc/grpc-stub/1.60.0/grpc-stub-1.60.0.jar"
               ],
               "downloaded_file_path": "v1/io/grpc/grpc-stub/1.60.0/grpc-stub-1.60.0.jar"
+            }
+          },
+          "unpinned_maven_wagon_gs_maven": {
+            "bzlFile": "@@rules_jvm_external~//:coursier.bzl",
+            "ruleClassName": "coursier_fetch",
+            "attributes": {
+              "user_provided_name": "maven_wagon_gs_maven",
+              "repositories": [
+                "{ \"repo_url\": \"https://repo1.maven.org/maven2\" }"
+              ],
+              "artifacts": [
+                "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
+                "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.31.0\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.9\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.11\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.11\" }",
+                "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.19.2\" }"
+              ],
+              "fail_on_missing_checksum": true,
+              "fetch_sources": true,
+              "fetch_javadoc": false,
+              "excluded_artifacts": [
+                "{ \"group\": \"com.google.collections\", \"artifact\": \"google-collections\" }"
+              ],
+              "generate_compat_repositories": false,
+              "version_conflict_policy": "pinned",
+              "override_targets": {},
+              "strict_visibility": false,
+              "strict_visibility_value": [
+                "@@//visibility:private"
+              ],
+              "maven_install_json": "@@//:maven_lock.json",
+              "resolve_timeout": 600,
+              "use_starlark_android_rules": false,
+              "aar_import_bzl_label": "@build_bazel_rules_android//android:rules.bzl",
+              "duplicate_version_warning": "warn",
+              "ignore_empty_files": false
             }
           },
           "io_grpc_grpc_util_1_60_0": {

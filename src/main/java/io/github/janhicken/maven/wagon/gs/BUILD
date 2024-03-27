@@ -5,8 +5,8 @@ java_library(
     visibility = ["//visibility:public"],
     deps = [
         ":MimeMapper",
-        "@maven//:com_google_cloud_google_cloud_storage",
-        "@maven//:org_apache_maven_wagon_wagon_provider_api",
+        "@maven_wagon_gs_maven//:com_google_cloud_google_cloud_storage",
+        "@maven_wagon_gs_maven//:org_apache_maven_wagon_wagon_provider_api",
     ],
 )
 
