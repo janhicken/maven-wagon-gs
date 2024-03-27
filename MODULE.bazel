@@ -1,11 +1,6 @@
 module(name = "maven_wagon_gs")
 
-bazel_dep(name = "rules_jvm_external", version = "5.3")
-single_version_override(
-    module_name = "rules_jvm_external",
-    patches = ["//patches:0001-Allow-passing-sensitive-credentials-for-java_export-.patch"],
-    patch_strip = 1,
-)
+bazel_dep(name = "rules_jvm_external", version = "6.0")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 
@@ -33,8 +28,8 @@ maven.install(
     excluded_artifacts = [
         "com.google.collections:google-collections",
     ],
-    lock_file = "//:maven_lock.json",
     fetch_sources = True,
+    lock_file = "//:maven_lock.json",
     repositories = ["https://repo1.maven.org/maven2"],
     version_conflict_policy = "pinned",
 )
