@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "3d338d9b7c12cf0eb694d621d99767797311181ccbd628c6009e19a47c7ab0ec",
+  "moduleFileHash": "90fb93b3723df1b0dd86bab9adad51c66c1d18662f98cdd7058f1773ad6cc7c3",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -47,7 +47,7 @@
                   "org.apache.maven.wagon:wagon-provider-api:3.5.3",
                   "org.apache.maven.wagon:wagon-provider-test:3.5.3",
                   "com.google.cloud:google-cloud-storage:2.36.1",
-                  "com.google.cloud:google-cloud-nio:0.127.9",
+                  "com.google.cloud:google-cloud-nio:0.127.14",
                   "org.slf4j:slf4j-api:2.0.12",
                   "org.slf4j:slf4j-jdk14:2.0.12",
                   "com.google.googlejavaformat:google-java-format:1.21.0"
@@ -2071,7 +2071,7 @@
         "bzlTransitiveDigest": "WLH6tV/jGiZ73lPBSYWRhoilLeqSLs6vQqjK4ph6NG0=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_lock.json": "324ec12b1a7a230e52e151ec319fc39f1a9fcf321e598191830fc9708894e362"
+          "@@//maven_lock.json": "5d4cf8a219ef6a6341167a2363479766457f9ac1f961b49efc6f50e13fd7f24e"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -2096,17 +2096,6 @@
                 "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-context/1.36.0/opentelemetry-context-1.36.0.jar"
               ],
               "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-context/1.36.0/opentelemetry-context-1.36.0.jar"
-            }
-          },
-          "commons_logging_commons_logging_jar_sources_1_2": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "44347acfe5860461728e9cb33251e97345be36f8a0dfd5c5130c172559455f41",
-              "urls": [
-                "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar"
-              ],
-              "downloaded_file_path": "v1/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar"
             }
           },
           "com_google_guava_guava_32_1_2_jre": {
@@ -2217,6 +2206,17 @@
                 "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.32.0/gax-grpc-2.32.0.jar"
               ],
               "downloaded_file_path": "v1/com/google/api/gax-grpc/2.32.0/gax-grpc-2.32.0.jar"
+            }
+          },
+          "com_google_cloud_google_cloud_nio_jar_sources_0_127_14": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "c862ed0ed58212e3e65bc4fded8b59a8d1a4e03146fc93e5125385e13eb59c3b",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.14/google-cloud-nio-0.127.14-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.14/google-cloud-nio-0.127.14-sources.jar"
             }
           },
           "org_slf4j_slf4j_jdk14_jar_sources_2_0_12": {
@@ -2417,17 +2417,6 @@
               "downloaded_file_path": "v1/com/google/http-client/google-http-client-gson/1.43.3/google-http-client-gson-1.43.3.jar"
             }
           },
-          "org_apache_httpcomponents_httpcore_4_4_16": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "6c9b3dd142a09dc468e23ad39aad6f75a0f2b85125104469f026e52a474e464f",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar"
-            }
-          },
           "io_grpc_grpc_protobuf_lite_1_56_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -2437,6 +2426,17 @@
                 "https://repo1.maven.org/maven2/io/grpc/grpc-protobuf-lite/1.56.1/grpc-protobuf-lite-1.56.1.jar"
               ],
               "downloaded_file_path": "v1/io/grpc/grpc-protobuf-lite/1.56.1/grpc-protobuf-lite-1.56.1.jar"
+            }
+          },
+          "org_apache_httpcomponents_httpcore_4_4_16": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "6c9b3dd142a09dc468e23ad39aad6f75a0f2b85125104469f026e52a474e464f",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar"
             }
           },
           "com_google_api_grpc_gapic_google_cloud_storage_v2_2_26_1_alpha": {
@@ -2921,17 +2921,6 @@
                 "https://repo1.maven.org/maven2/org/threeten/threetenbp/1.6.8/threetenbp-1.6.8.jar"
               ],
               "downloaded_file_path": "v1/org/threeten/threetenbp/1.6.8/threetenbp-1.6.8.jar"
-            }
-          },
-          "javax_inject_javax_inject_jar_sources_1": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "c4b87ee2911c139c3daf498a781967f1eb2e75bc1a8529a2e7b328a15d0e433e",
-              "urls": [
-                "https://repo1.maven.org/maven2/javax/inject/javax.inject/1/javax.inject-1-sources.jar"
-              ],
-              "downloaded_file_path": "v1/javax/inject/javax.inject/1/javax.inject-1-sources.jar"
             }
           },
           "com_google_re2j_re2j_1_7": {
@@ -3768,17 +3757,6 @@
               "downloaded_file_path": "v1/org/eclipse/jetty/aggregate/jetty-all/9.2.30.v20200428/jetty-all-9.2.30.v20200428-sources.jar"
             }
           },
-          "com_google_cloud_google_cloud_nio_jar_sources_0_127_9": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "650fe9ab5f4c1575f2d3e1eacaf7b852cde2f851e3050c9a245740db241df5f9",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.9/google-cloud-nio-0.127.9-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.9/google-cloud-nio-0.127.9-sources.jar"
-            }
-          },
           "com_google_guava_failureaccess_1_0_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -3999,17 +3977,6 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/json-utils/2.20.128/json-utils-2.20.128.jar"
             }
           },
-          "org_apache_httpcomponents_httpclient_jar_sources_4_5_14": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "55b01f9f4cbec9ac646866a4b64b176570d79e293a556796b5b0263d047ef8e6",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14-sources.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14-sources.jar"
-            }
-          },
           "io_grpc_grpc_stub_1_62_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4173,17 +4140,6 @@
                 "https://repo1.maven.org/maven2/software/amazon/awssdk/s3/2.20.128/s3-2.20.128.jar"
               ],
               "downloaded_file_path": "v1/software/amazon/awssdk/s3/2.20.128/s3-2.20.128.jar"
-            }
-          },
-          "org_apache_httpcomponents_httpcore_jar_sources_4_4_16": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "705f8cf3671093b6c1db16bbf6971a7ef400e3819784f1af53e5bc3e67b5a9a0",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16-sources.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16-sources.jar"
             }
           },
           "io_netty_netty_codec_http2_4_1_94_Final": {
@@ -4385,7 +4341,7 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.36.1\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.9\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.14\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.21.0\" }"
@@ -4419,6 +4375,17 @@
                 "https://repo1.maven.org/maven2/io/netty/netty-handler/4.1.94.Final/netty-handler-4.1.94.Final.jar"
               ],
               "downloaded_file_path": "v1/io/netty/netty-handler/4.1.94.Final/netty-handler-4.1.94.Final.jar"
+            }
+          },
+          "com_google_cloud_google_cloud_nio_0_127_14": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "ff7bcfbe6ca18487358bd79aa500d479924a804cef6db6e4b01b5da91ff94729",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.14/google-cloud-nio-0.127.14.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.14/google-cloud-nio-0.127.14.jar"
             }
           },
           "com_google_apis_google_api_services_storage_jar_sources_v1_rev20240311_2_0_0": {
@@ -4822,7 +4789,7 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.36.1\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.9\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.14\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.21.0\" }"
@@ -4914,17 +4881,6 @@
               "downloaded_file_path": "v1/io/grpc/grpc-stub/1.62.2/grpc-stub-1.62.2-sources.jar"
             }
           },
-          "com_google_cloud_google_cloud_nio_0_127_9": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "feadc765acb0fcf7b6300ff05f5529885f4c429c4ef02cc0c38b95cb73aeeb78",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.9/google-cloud-nio-0.127.9.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.9/google-cloud-nio-0.127.9.jar"
-            }
-          },
           "org_slf4j_slf4j_jdk14_2_0_12": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4978,17 +4934,6 @@
                 "https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar"
               ],
               "downloaded_file_path": "v1/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar"
-            }
-          },
-          "javax_inject_javax_inject_1": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff",
-              "urls": [
-                "https://repo1.maven.org/maven2/javax/inject/javax.inject/1/javax.inject-1.jar"
-              ],
-              "downloaded_file_path": "v1/javax/inject/javax.inject/1/javax.inject-1.jar"
             }
           },
           "com_google_guava_failureaccess_jar_sources_1_0_2": {
