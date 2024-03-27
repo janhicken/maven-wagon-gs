@@ -35,6 +35,7 @@ maven.install(
     excluded_artifacts = [
         "com.google.collections:google-collections",
     ],
+    fail_if_repin_required = True,
     fetch_sources = True,
     lock_file = "//:maven_lock.json",
     repositories = ["https://repo1.maven.org/maven2"],

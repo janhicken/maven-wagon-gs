@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "722733e6c76a5340e3b0639f38cdeaa9011fcb18012c48ae4974a028bc8e2f02",
+  "moduleFileHash": "219806cdedc222fc79f8999b49e7b5319666ae38956efb229530676963fe8e2e",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -55,6 +55,7 @@
                 "excluded_artifacts": [
                   "com.google.collections:google-collections"
                 ],
+                "fail_if_repin_required": true,
                 "fetch_sources": true,
                 "lock_file": "//:maven_lock.json",
                 "repositories": [
@@ -5713,7 +5714,7 @@
                 "@@//visibility:private"
               ],
               "additional_netrc_lines": [],
-              "fail_if_repin_required": false,
+              "fail_if_repin_required": true,
               "use_starlark_android_rules": false,
               "aar_import_bzl_label": "@build_bazel_rules_android//android:rules.bzl",
               "duplicate_version_warning": "warn",
