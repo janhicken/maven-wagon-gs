@@ -10,11 +10,11 @@ all:
 
 .PHONY: lint
 lint:
-	bazel run //:java_fmt -- --dry-run --set-exit-if-changed @<(find $$PWD/src -type f -name *.java)
+	bazel run -- //tools:format --mode check
 
 .PHONY: fmt
 fmt:
-	bazel run //:java_fmt -- --replace @<(find $$PWD/src -type f -name *.java)
+	bazel run -- //tools:format
 
 .PHONY: test
 test:
