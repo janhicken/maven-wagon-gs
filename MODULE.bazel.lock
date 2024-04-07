@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "219806cdedc222fc79f8999b49e7b5319666ae38956efb229530676963fe8e2e",
+  "moduleFileHash": "2344363a04d2fbba1447c27ab8ece40b9c9c25145af8b4830afb6b822cb20953",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -47,7 +47,7 @@
                   "org.apache.maven.wagon:wagon-provider-api:3.5.3",
                   "org.apache.maven.wagon:wagon-provider-test:3.5.3",
                   "com.google.cloud:google-cloud-storage:2.36.1",
-                  "com.google.cloud:google-cloud-nio:0.127.14",
+                  "com.google.cloud:google-cloud-nio:0.127.15",
                   "org.slf4j:slf4j-api:2.0.12",
                   "org.slf4j:slf4j-jdk14:2.0.12",
                   "com.google.googlejavaformat:google-java-format:1.21.0"
@@ -3429,7 +3429,7 @@
         "bzlTransitiveDigest": "WLH6tV/jGiZ73lPBSYWRhoilLeqSLs6vQqjK4ph6NG0=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_lock.json": "5d4cf8a219ef6a6341167a2363479766457f9ac1f961b49efc6f50e13fd7f24e"
+          "@@//maven_lock.json": "6f30d3cd582985463b0b3f6debdddc73b43939b8359a668ec4cbcd5b58af32f0"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -3555,6 +3555,17 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/endpoints-spi/2.20.128/endpoints-spi-2.20.128.jar"
             }
           },
+          "com_google_cloud_google_cloud_nio_jar_sources_0_127_15": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "42a4f27b79a6a0f06f1dfb24fe9efabf8a0527fee01deb9f3bd00d693121cb6f",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.15/google-cloud-nio-0.127.15-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.15/google-cloud-nio-0.127.15-sources.jar"
+            }
+          },
           "com_google_api_gax_grpc_2_32_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -3564,17 +3575,6 @@
                 "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.32.0/gax-grpc-2.32.0.jar"
               ],
               "downloaded_file_path": "v1/com/google/api/gax-grpc/2.32.0/gax-grpc-2.32.0.jar"
-            }
-          },
-          "com_google_cloud_google_cloud_nio_jar_sources_0_127_14": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "c862ed0ed58212e3e65bc4fded8b59a8d1a4e03146fc93e5125385e13eb59c3b",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.14/google-cloud-nio-0.127.14-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.14/google-cloud-nio-0.127.14-sources.jar"
             }
           },
           "org_slf4j_slf4j_jdk14_jar_sources_2_0_12": {
@@ -5699,7 +5699,7 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.36.1\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.14\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.15\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.21.0\" }"
@@ -5735,15 +5735,15 @@
               "downloaded_file_path": "v1/io/netty/netty-handler/4.1.94.Final/netty-handler-4.1.94.Final.jar"
             }
           },
-          "com_google_cloud_google_cloud_nio_0_127_14": {
+          "com_google_cloud_google_cloud_nio_0_127_15": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "ff7bcfbe6ca18487358bd79aa500d479924a804cef6db6e4b01b5da91ff94729",
+              "sha256": "7f0c8d328ae19e7bdcc5c5b8a146b7766f8f7795031b11b746e08c2ee341a747",
               "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.14/google-cloud-nio-0.127.14.jar"
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.15/google-cloud-nio-0.127.15.jar"
               ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.14/google-cloud-nio-0.127.14.jar"
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.15/google-cloud-nio-0.127.15.jar"
             }
           },
           "com_google_apis_google_api_services_storage_jar_sources_v1_rev20240311_2_0_0": {
@@ -6147,7 +6147,7 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.36.1\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.14\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.15\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.21.0\" }"
