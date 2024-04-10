@@ -41,8 +41,8 @@ outdated:
 	bazel run @maven_wagon_gs_maven//:outdated
 
 .PHONY: pin
-pin: maven_lock.json
+pin: maven.lock
 
-maven_lock.json: MODULE.bazel
+maven.lock: MODULE.bazel
 	bazel run @unpinned_maven_wagon_gs_maven//:pin
 	chmod -x $@

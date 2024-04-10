@@ -34,7 +34,7 @@ maven.install(
     ],
     fail_if_repin_required = True,
     fetch_sources = True,
-    lock_file = "//:maven_lock.json",
+    lock_file = "//:maven.lock",
     repositories = ["https://repo1.maven.org/maven2"],
     version_conflict_policy = "pinned",
 )
