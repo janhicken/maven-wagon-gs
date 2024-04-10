@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "b94a63b0e19f370a66991d36e4f90d739ee3996140104878503c3d47d6f2f1ee",
+  "moduleFileHash": "a12880089e8088f6adef52713b9f7b9eafa47a7bfb1149d123c435b9d286ca1d",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -48,7 +48,6 @@
                   "org.apache.maven.wagon:wagon-provider-test:3.5.3",
                   "com.google.cloud:google-cloud-storage:2.36.1",
                   "com.google.cloud:google-cloud-nio:0.127.15",
-                  "org.slf4j:slf4j-api:2.0.12",
                   "org.slf4j:slf4j-jdk14:2.0.12",
                   "com.google.googlejavaformat:google-java-format:1.22.0"
                 ],
@@ -66,7 +65,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 17,
+                "line": 15,
                 "column": 14
               }
             }
@@ -3429,7 +3428,7 @@
         "bzlTransitiveDigest": "WLH6tV/jGiZ73lPBSYWRhoilLeqSLs6vQqjK4ph6NG0=",
         "recordedFileInputs": {
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_lock.json": "ef973719cbd30ec32d8a05e5d52199284fb85a6c4a03c789fbb47f0275e33f1c"
+          "@@//maven_lock.json": "3c73c938f0c624fd7dd25f4150c11b5f55511e18aba9ef316ba858df360948a3"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -5700,7 +5699,6 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.36.1\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.15\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.22.0\" }"
               ],
@@ -6148,7 +6146,6 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.36.1\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.15\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-api\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.12\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.22.0\" }"
               ],

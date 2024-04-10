@@ -12,8 +12,6 @@ maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 
 MAVEN_WAGON_VERSION = "3.5.3"
 
-SLF4J_VERSION = "2.0.12"
-
 maven.install(
     name = "maven_wagon_gs_maven",
     artifacts = [
@@ -26,8 +24,7 @@ maven.install(
         "com.google.cloud:google-cloud-nio:0.127.15",
 
         # Logging
-        "org.slf4j:slf4j-api:%s" % SLF4J_VERSION,
-        "org.slf4j:slf4j-jdk14:%s" % SLF4J_VERSION,
+        "org.slf4j:slf4j-jdk14:2.0.12",
 
         # Dev tools
         "com.google.googlejavaformat:google-java-format:1.22.0",
