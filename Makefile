@@ -10,7 +10,7 @@ all:
 
 .PHONY: lint
 lint:
-	bazel run -- //tools:format --mode check
+	bazel run -- //tools:format.check 
 
 .PHONY: fmt
 fmt:
