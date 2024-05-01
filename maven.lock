@@ -680,9 +680,6 @@
       "org.slf4j:slf4j-api"
     ]
   },
-  "skipped": [
-    "com.google.guava:listenablefuture:jar:sources"
-  ],
   "packages": {
     "com.fasterxml.jackson.core:jackson-core": [
       "com.fasterxml.jackson.core",
@@ -1658,5 +1655,209 @@
       "org.threeten:threetenbp:jar:sources"
     ]
   },
+  "services": {
+    "com.fasterxml.jackson.core:jackson-core": {
+      "com.fasterxml.jackson.core.JsonFactory": [
+        "com.fasterxml.jackson.core.JsonFactory"
+      ]
+    },
+    "com.fasterxml.jackson.core:jackson-core:jar:sources": {
+      "com.fasterxml.jackson.core.JsonFactory": [
+        "com.fasterxml.jackson.core.JsonFactory"
+      ]
+    },
+    "com.google.cloud:google-cloud-nio": {
+      "java.nio.file.spi.FileSystemProvider": [
+        "com.google.cloud.storage.contrib.nio.CloudStorageFileSystemProvider"
+      ]
+    },
+    "com.google.cloud:google-cloud-nio:jar:sources": {
+      "java.nio.file.spi.FileSystemProvider": [
+        "com.google.cloud.storage.contrib.nio.CloudStorageFileSystemProvider"
+      ]
+    },
+    "com.google.googlejavaformat:google-java-format": {
+      "java.util.spi.ToolProvider": [
+        "com.google.googlejavaformat.java.GoogleJavaFormatToolProvider"
+      ],
+      "javax.tools.Tool": [
+        "com.google.googlejavaformat.java.GoogleJavaFormatTool"
+      ]
+    },
+    "io.grpc:grpc-core": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.internal.PickFirstLoadBalancerProvider"
+      ],
+      "io.grpc.NameResolverProvider": [
+        "io.grpc.internal.DnsNameResolverProvider"
+      ]
+    },
+    "io.grpc:grpc-core:jar:sources": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.internal.PickFirstLoadBalancerProvider"
+      ],
+      "io.grpc.NameResolverProvider": [
+        "io.grpc.internal.DnsNameResolverProvider"
+      ]
+    },
+    "io.grpc:grpc-googleapis": {
+      "io.grpc.NameResolverProvider": [
+        "io.grpc.googleapis.GoogleCloudToProdExperimentalNameResolverProvider",
+        "io.grpc.googleapis.GoogleCloudToProdNameResolverProvider"
+      ]
+    },
+    "io.grpc:grpc-googleapis:jar:sources": {
+      "io.grpc.NameResolverProvider": [
+        "io.grpc.googleapis.GoogleCloudToProdExperimentalNameResolverProvider",
+        "io.grpc.googleapis.GoogleCloudToProdNameResolverProvider"
+      ]
+    },
+    "io.grpc:grpc-grpclb": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.grpclb.GrpclbLoadBalancerProvider"
+      ],
+      "io.grpc.NameResolverProvider": [
+        "io.grpc.grpclb.SecretGrpclbNameResolverProvider$Provider"
+      ]
+    },
+    "io.grpc:grpc-grpclb:jar:sources": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.grpclb.GrpclbLoadBalancerProvider"
+      ],
+      "io.grpc.NameResolverProvider": [
+        "io.grpc.grpclb.SecretGrpclbNameResolverProvider$Provider"
+      ]
+    },
+    "io.grpc:grpc-netty-shaded": {
+      "io.grpc.ManagedChannelProvider": [
+        "io.grpc.netty.shaded.io.grpc.netty.NettyChannelProvider",
+        "io.grpc.netty.shaded.io.grpc.netty.UdsNettyChannelProvider"
+      ],
+      "io.grpc.NameResolverProvider": [
+        "io.grpc.netty.shaded.io.grpc.netty.UdsNameResolverProvider"
+      ],
+      "io.grpc.ServerProvider": [
+        "io.grpc.netty.shaded.io.grpc.netty.NettyServerProvider"
+      ],
+      "reactor.blockhound.integration.BlockHoundIntegration": [
+        "io.grpc.netty.shaded.io.netty.util.internal.Hidden$NettyBlockHoundIntegration"
+      ]
+    },
+    "io.grpc:grpc-rls": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.rls.RlsLoadBalancerProvider"
+      ]
+    },
+    "io.grpc:grpc-rls:jar:sources": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.rls.RlsLoadBalancerProvider"
+      ]
+    },
+    "io.grpc:grpc-services": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.protobuf.services.internal.HealthCheckingRoundRobinLoadBalancerProvider"
+      ]
+    },
+    "io.grpc:grpc-services:jar:sources": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.protobuf.services.internal.HealthCheckingRoundRobinLoadBalancerProvider"
+      ]
+    },
+    "io.grpc:grpc-util": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.util.OutlierDetectionLoadBalancerProvider",
+        "io.grpc.util.SecretRoundRobinLoadBalancerProvider$Provider"
+      ]
+    },
+    "io.grpc:grpc-util:jar:sources": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.util.OutlierDetectionLoadBalancerProvider",
+        "io.grpc.util.SecretRoundRobinLoadBalancerProvider$Provider"
+      ]
+    },
+    "io.grpc:grpc-xds": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.xds.CdsLoadBalancerProvider",
+        "io.grpc.xds.ClusterImplLoadBalancerProvider",
+        "io.grpc.xds.ClusterManagerLoadBalancerProvider",
+        "io.grpc.xds.ClusterResolverLoadBalancerProvider",
+        "io.grpc.xds.LeastRequestLoadBalancerProvider",
+        "io.grpc.xds.PriorityLoadBalancerProvider",
+        "io.grpc.xds.RingHashLoadBalancerProvider",
+        "io.grpc.xds.WeightedRoundRobinLoadBalancerProvider",
+        "io.grpc.xds.WeightedTargetLoadBalancerProvider",
+        "io.grpc.xds.WrrLocalityLoadBalancerProvider"
+      ],
+      "io.grpc.NameResolverProvider": [
+        "io.grpc.xds.XdsNameResolverProvider"
+      ],
+      "io.grpc.xds.XdsCredentialsProvider": [
+        "io.grpc.xds.internal.GoogleDefaultXdsCredentialsProvider",
+        "io.grpc.xds.internal.InsecureXdsCredentialsProvider",
+        "io.grpc.xds.internal.TlsXdsCredentialsProvider"
+      ]
+    },
+    "io.grpc:grpc-xds:jar:sources": {
+      "io.grpc.LoadBalancerProvider": [
+        "io.grpc.xds.CdsLoadBalancerProvider",
+        "io.grpc.xds.ClusterImplLoadBalancerProvider",
+        "io.grpc.xds.ClusterManagerLoadBalancerProvider",
+        "io.grpc.xds.ClusterResolverLoadBalancerProvider",
+        "io.grpc.xds.LeastRequestLoadBalancerProvider",
+        "io.grpc.xds.PriorityLoadBalancerProvider",
+        "io.grpc.xds.RingHashLoadBalancerProvider",
+        "io.grpc.xds.WeightedRoundRobinLoadBalancerProvider",
+        "io.grpc.xds.WeightedTargetLoadBalancerProvider",
+        "io.grpc.xds.WrrLocalityLoadBalancerProvider"
+      ],
+      "io.grpc.NameResolverProvider": [
+        "io.grpc.xds.XdsNameResolverProvider"
+      ],
+      "io.grpc.xds.XdsCredentialsProvider": [
+        "io.grpc.xds.internal.GoogleDefaultXdsCredentialsProvider",
+        "io.grpc.xds.internal.InsecureXdsCredentialsProvider",
+        "io.grpc.xds.internal.TlsXdsCredentialsProvider"
+      ]
+    },
+    "org.eclipse.jetty.aggregate:jetty-all": {
+      "javax.servlet.ServletContainerInitializer": [
+        "org.eclipse.jetty.websocket.jsr356.server.deploy.WebSocketServerContainerInitializer"
+      ],
+      "javax.websocket.ContainerProvider": [
+        "org.eclipse.jetty.websocket.jsr356.JettyClientContainerProvider"
+      ],
+      "javax.websocket.server.ServerEndpointConfig$Configurator": [
+        "org.eclipse.jetty.websocket.jsr356.server.BasicServerEndpointConfigurator"
+      ],
+      "org.eclipse.jetty.websocket.api.extensions.Extension": [
+        "org.eclipse.jetty.websocket.common.extensions.compress.DeflateFrameExtension",
+        "org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension",
+        "org.eclipse.jetty.websocket.common.extensions.compress.XWebkitDeflateFrameExtension",
+        "org.eclipse.jetty.websocket.common.extensions.fragment.FragmentExtension",
+        "org.eclipse.jetty.websocket.common.extensions.identity.IdentityExtension"
+      ],
+      "org.eclipse.jetty.websocket.servlet.WebSocketServletFactory": [
+        "org.eclipse.jetty.websocket.server.WebSocketServerFactory"
+      ]
+    },
+    "org.slf4j:slf4j-jdk14": {
+      "org.slf4j.spi.SLF4JServiceProvider": [
+        "org.slf4j.jul.JULServiceProvider"
+      ]
+    },
+    "org.slf4j:slf4j-jdk14:jar:sources": {
+      "org.slf4j.spi.SLF4JServiceProvider": [
+        "org.slf4j.jul.JULServiceProvider"
+      ]
+    },
+    "org.threeten:threetenbp": {
+      "org.threeten.bp.zone.ZoneRulesProvider": [
+        "org.threeten.bp.zone.TzdbZoneRulesProvider"
+      ]
+    }
+  },
+  "skipped": [
+    "com.google.guava:listenablefuture:jar:sources"
+  ],
   "version": "2"
 }
