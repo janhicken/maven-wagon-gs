@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "82c3adf18662b39114f67d6f9618cc1df1ab0f66c0d0d0193411b71e0c213eac",
+  "moduleFileHash": "70b9f99be0e6cf050eaef7b38cdbd6ad506f68e0c6914d06fb31905fed04c824",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -46,7 +46,7 @@
                 "artifacts": [
                   "org.apache.maven.wagon:wagon-provider-api:3.5.3",
                   "org.apache.maven.wagon:wagon-provider-test:3.5.3",
-                  "com.google.cloud:google-cloud-storage:2.37.0",
+                  "com.google.cloud:google-cloud-storage:2.38.0",
                   "com.google.cloud:google-cloud-nio:0.127.16",
                   "org.slf4j:slf4j-jdk14:2.0.13",
                   "com.google.googlejavaformat:google-java-format:1.22.0"
@@ -3748,7 +3748,7 @@
       "general": {
         "bzlTransitiveDigest": "8AIjzxyvVnJujblgziVgY6LujIxVChTDYqcPK+GLgJI=",
         "recordedFileInputs": {
-          "@@//maven.lock": "cff99cb131474c458fa9f97b06e74f9410769eb92fe3d2f190ed0cce20891c61",
+          "@@//maven.lock": "6dde37dd3110b01a08e82be1525a17c7007d47d54035ccdf1b693aaf85ef14c7",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8"
         },
         "recordedDirentsInputs": {},
@@ -3862,17 +3862,6 @@
                 "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-nio/0.127.16/google-cloud-nio-0.127.16-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/cloud/google-cloud-nio/0.127.16/google-cloud-nio-0.127.16-sources.jar"
-            }
-          },
-          "com_google_cloud_google_cloud_storage_2_37_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "4162e2a5e1263f78a2ec8cb0ed91c896691bfb0f7560d87609700d9003ef6b0c",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-storage/2.37.0/google-cloud-storage-2.37.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-storage/2.37.0/google-cloud-storage-2.37.0.jar"
             }
           },
           "org_checkerframework_checker_qual_jar_sources_3_42_0": {
@@ -4018,17 +4007,6 @@
               "downloaded_file_path": "v1/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar"
             }
           },
-          "com_google_api_grpc_proto_google_common_protos_2_38_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "faf8baed42a45c31705967e57de37d22de35c161776fa8da228a872ec0c3e99b",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.38.0/proto-google-common-protos-2.38.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-common-protos/2.38.0/proto-google-common-protos-2.38.0.jar"
-            }
-          },
           "org_apache_maven_resolver_maven_resolver_transport_file_jar_sources_1_9_18": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4051,15 +4029,15 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/http-auth-spi/2.25.23/http-auth-spi-2.25.23-sources.jar"
             }
           },
-          "com_google_api_grpc_proto_google_iam_v1_jar_sources_1_33_0": {
+          "com_google_api_gax_jar_sources_2_48_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "261ac65666259cb39462c83741f5aefe86f83347ef286a44a76960605ee5ad7b",
+              "sha256": "2200572ecd1124a0d21bdfc2a7b866e22d19aa44af4ab42ae81fa0e26865b475",
               "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-iam-v1/1.33.0/proto-google-iam-v1-1.33.0-sources.jar"
+                "https://repo1.maven.org/maven2/com/google/api/gax/2.48.0/gax-2.48.0-sources.jar"
               ],
-              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-iam-v1/1.33.0/proto-google-iam-v1-1.33.0-sources.jar"
+              "downloaded_file_path": "v1/com/google/api/gax/2.48.0/gax-2.48.0-sources.jar"
             }
           },
           "org_slf4j_slf4j_api_jar_sources_2_0_13": {
@@ -4093,17 +4071,6 @@
                 "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12-sources.jar"
               ],
               "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12-sources.jar"
-            }
-          },
-          "com_google_api_gax_grpc_jar_sources_2_47_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "a76d29d44cbc16ee449d44b8a9d110a4ca9cdf07bc631c30afd03c082c578cb4",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.47.0/gax-grpc-2.47.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/gax-grpc/2.47.0/gax-grpc-2.47.0-sources.jar"
             }
           },
           "software_amazon_awssdk_checksums_jar_sources_2_25_23": {
@@ -4214,17 +4181,6 @@
                 "https://repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/3.9.6/maven-plugin-api-3.9.6.jar"
               ],
               "downloaded_file_path": "v1/org/apache/maven/maven-plugin-api/3.9.6/maven-plugin-api-3.9.6.jar"
-            }
-          },
-          "com_google_api_api_common_jar_sources_2_30_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "4c71e3a04fcb5361492530e97d334d02c1c587db843dcf5f8332596461e00722",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/api-common/2.30.0/api-common-2.30.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/api-common/2.30.0/api-common-2.30.0-sources.jar"
             }
           },
           "software_amazon_awssdk_utils_2_25_23": {
@@ -4359,6 +4315,17 @@
               "downloaded_file_path": "v1/org/apache/maven/resolver/maven-resolver-api/1.9.18/maven-resolver-api-1.9.18.jar"
             }
           },
+          "com_google_cloud_google_cloud_core_grpc_jar_sources_2_38_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a661baaa97f377c7c730799a5ebe304cf8721ad957ea64fafcdbdf9ab427a389",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core-grpc/2.38.0/google-cloud-core-grpc-2.38.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-grpc/2.38.0/google-cloud-core-grpc-2.38.0-sources.jar"
+            }
+          },
           "io_grpc_grpc_auth_1_62_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4381,17 +4348,6 @@
               "downloaded_file_path": "v1/org/codehaus/plexus/plexus-container-default/2.1.0/plexus-container-default-2.1.0-sources.jar"
             }
           },
-          "com_google_api_grpc_proto_google_iam_v1_1_33_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "5e40dfab91388b8039e62d7c5e49275457309453a1f553ec398263234d21d7e7",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-iam-v1/1.33.0/proto-google-iam-v1-1.33.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-iam-v1/1.33.0/proto-google-iam-v1-1.33.0.jar"
-            }
-          },
           "com_google_http_client_google_http_client_gson_jar_sources_1_44_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4401,6 +4357,17 @@
                 "https://repo1.maven.org/maven2/com/google/http-client/google-http-client-gson/1.44.1/google-http-client-gson-1.44.1-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/http-client/google-http-client-gson/1.44.1/google-http-client-gson-1.44.1-sources.jar"
+            }
+          },
+          "com_google_api_gax_2_48_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "81a71273067e8238f53e2fcf9d03cb343b9f431c27e84372029dd4a4889f3c37",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/gax/2.48.0/gax-2.48.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/gax/2.48.0/gax-2.48.0.jar"
             }
           },
           "org_apache_maven_maven_core_jar_sources_3_9_6": {
@@ -4485,6 +4452,17 @@
               "downloaded_file_path": "v1/com/google/cloud/google-cloud-core/2.36.1/google-cloud-core-2.36.1.jar"
             }
           },
+          "com_google_cloud_google_cloud_storage_2_38_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "9585c205a965513a024c7df0eeafa46a5ace3878e77c6f45fc74295588ab9a43",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-storage/2.38.0/google-cloud-storage-2.38.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-storage/2.38.0/google-cloud-storage-2.38.0.jar"
+            }
+          },
           "software_amazon_awssdk_s3_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4551,6 +4529,17 @@
               "downloaded_file_path": "v1/io/grpc/grpc-xds/1.62.2/grpc-xds-1.62.2.jar"
             }
           },
+          "com_google_api_grpc_proto_google_cloud_storage_v2_jar_sources_2_38_0_alpha": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "6a4d077a5b823c58925bfb713e8f2b87a5a23184d014f5e96aaadfc07b57b6dd",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-cloud-storage-v2/2.38.0-alpha/proto-google-cloud-storage-v2-2.38.0-alpha-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-cloud-storage-v2/2.38.0-alpha/proto-google-cloud-storage-v2-2.38.0-alpha-sources.jar"
+            }
+          },
           "org_apache_maven_shared_maven_shared_utils_3_3_4": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4560,6 +4549,17 @@
                 "https://repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar"
               ],
               "downloaded_file_path": "v1/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar"
+            }
+          },
+          "com_google_api_grpc_proto_google_common_protos_2_39_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "1dffa22eb5e3a6a500f78e46a705a780c3d43076dc82a93ba39b66ccc57865b4",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.39.0/proto-google-common-protos-2.39.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-common-protos/2.39.0/proto-google-common-protos-2.39.0.jar"
             }
           },
           "software_amazon_awssdk_apache_client_2_25_23": {
@@ -4593,6 +4593,17 @@
                 "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.46.1/gax-grpc-2.46.1-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/api/gax-grpc/2.46.1/gax-grpc-2.46.1-sources.jar"
+            }
+          },
+          "com_google_api_grpc_proto_google_iam_v1_jar_sources_1_34_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "3aebcdba01de213af1e59c823ef92e564d1b4230baf43f9f2f432f219aeb62b1",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-iam-v1/1.34.0/proto-google-iam-v1-1.34.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-iam-v1/1.34.0/proto-google-iam-v1-1.34.0-sources.jar"
             }
           },
           "org_apache_maven_resolver_maven_resolver_named_locks_1_9_18": {
@@ -4705,15 +4716,26 @@
               "downloaded_file_path": "v1/org/codehaus/plexus/plexus-classworlds/2.6.0/plexus-classworlds-2.6.0-sources.jar"
             }
           },
-          "com_google_api_gax_httpjson_jar_sources_2_47_0": {
+          "com_google_api_grpc_proto_google_cloud_storage_v2_2_38_0_alpha": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "0224c3e377f809a7f0e5d68f96332ad02baa473db4d5987a72e39c2f01f01946",
+              "sha256": "8dd763b5b5d9641885219376f91a1935e7d6d8af181463c8ec17aecc3df1f8ca",
               "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/gax-httpjson/2.47.0/gax-httpjson-2.47.0-sources.jar"
+                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-cloud-storage-v2/2.38.0-alpha/proto-google-cloud-storage-v2-2.38.0-alpha.jar"
               ],
-              "downloaded_file_path": "v1/com/google/api/gax-httpjson/2.47.0/gax-httpjson-2.47.0-sources.jar"
+              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-cloud-storage-v2/2.38.0-alpha/proto-google-cloud-storage-v2-2.38.0-alpha.jar"
+            }
+          },
+          "com_google_api_api_common_jar_sources_2_31_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "928dbd07284786d16421476f371ba755b3fb0432c20aa8bf668d62b56b1059cf",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/api-common/2.31.0/api-common-2.31.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/api-common/2.31.0/api-common-2.31.0-sources.jar"
             }
           },
           "com_google_http_client_google_http_client_gson_1_44_1": {
@@ -4791,17 +4813,6 @@
                 "https://repo1.maven.org/maven2/io/grpc/grpc-util/1.62.2/grpc-util-1.62.2-sources.jar"
               ],
               "downloaded_file_path": "v1/io/grpc/grpc-util/1.62.2/grpc-util-1.62.2-sources.jar"
-            }
-          },
-          "io_opentelemetry_opentelemetry_api_jar_sources_1_37_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "0349f3dfcf5b80907254cc56769544d04ddb4ce613e2273bc3f089b86f7f13e4",
-              "urls": [
-                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-api/1.37.0/opentelemetry-api-1.37.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-api/1.37.0/opentelemetry-api-1.37.0-sources.jar"
             }
           },
           "org_apache_maven_wagon_wagon_provider_test_jar_sources_3_5_3": {
@@ -4892,17 +4903,6 @@
               "downloaded_file_path": "v1/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M2/org.eclipse.sisu.inject-0.9.0.M2-sources.jar"
             }
           },
-          "com_google_api_grpc_grpc_google_cloud_storage_v2_jar_sources_2_37_0_alpha": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "a2276dae9ce54b0dec184a6da8e53e872722af43bd33a5cff45f18d8346bba48",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/grpc-google-cloud-storage-v2/2.37.0-alpha/grpc-google-cloud-storage-v2-2.37.0-alpha-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/grpc/grpc-google-cloud-storage-v2/2.37.0-alpha/grpc-google-cloud-storage-v2-2.37.0-alpha-sources.jar"
-            }
-          },
           "javax_inject_javax_inject_jar_sources_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4923,17 +4923,6 @@
                 "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-cipher/2.1.0/plexus-cipher-2.1.0.jar"
               ],
               "downloaded_file_path": "v1/org/codehaus/plexus/plexus-cipher/2.1.0/plexus-cipher-2.1.0.jar"
-            }
-          },
-          "com_google_cloud_google_cloud_core_grpc_jar_sources_2_37_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "ce8fd6775ecb45ca0a8b282ddd1274fa5b501b0ce7f31a76fa199cc251a12756",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core-grpc/2.37.0/google-cloud-core-grpc-2.37.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-grpc/2.37.0/google-cloud-core-grpc-2.37.0-sources.jar"
             }
           },
           "com_google_googlejavaformat_google_java_format_1_22_0": {
@@ -4980,15 +4969,15 @@
               "downloaded_file_path": "v1/org/apache/maven/resolver/maven-resolver-api/1.9.18/maven-resolver-api-1.9.18-sources.jar"
             }
           },
-          "com_google_cloud_google_cloud_core_2_37_0": {
+          "com_google_api_grpc_proto_google_iam_v1_1_34_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "74feab412bbe12751f35d17224054cfd14e74d3964f0c4011c876b5945d67e4c",
+              "sha256": "0206168a351d008a6bf74a2b5907a7c281469dcab52e054bdb6c52ab30bdad7a",
               "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core/2.37.0/google-cloud-core-2.37.0.jar"
+                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-iam-v1/1.34.0/proto-google-iam-v1-1.34.0.jar"
               ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core/2.37.0/google-cloud-core-2.37.0.jar"
+              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-iam-v1/1.34.0/proto-google-iam-v1-1.34.0.jar"
             }
           },
           "io_netty_netty_common_4_1_108_Final": {
@@ -5079,17 +5068,6 @@
               "downloaded_file_path": "v1/com/google/auto/value/auto-value-annotations/1.10.4/auto-value-annotations-1.10.4.jar"
             }
           },
-          "com_google_api_gax_2_47_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "2f6a389fbbd76e970157beed13af3dcd20ddbe7e30eeb638672c535fac4d00f4",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/gax/2.47.0/gax-2.47.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/gax/2.47.0/gax-2.47.0.jar"
-            }
-          },
           "software_amazon_awssdk_annotations_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5110,17 +5088,6 @@
                 "https://repo1.maven.org/maven2/com/google/inject/guice/5.1.0/guice-5.1.0-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/inject/guice/5.1.0/guice-5.1.0-sources.jar"
-            }
-          },
-          "com_google_api_grpc_proto_google_cloud_storage_v2_jar_sources_2_37_0_alpha": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "8c2a24c99d2161fe5f21180427c420684fc62eb544c69b78e3f7f6cbfdabe2ec",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-cloud-storage-v2/2.37.0-alpha/proto-google-cloud-storage-v2-2.37.0-alpha-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-cloud-storage-v2/2.37.0-alpha/proto-google-cloud-storage-v2-2.37.0-alpha-sources.jar"
             }
           },
           "io_grpc_grpc_inprocess_jar_sources_1_62_2": {
@@ -5237,6 +5204,17 @@
               "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-api/1.36.0/opentelemetry-api-1.36.0.jar"
             }
           },
+          "com_google_api_grpc_grpc_google_cloud_storage_v2_2_38_0_alpha": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a538cac407474d5ad223472da2c041bb552da8ec1696f5ad7f66c8d0269613d3",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/grpc/grpc-google-cloud-storage-v2/2.38.0-alpha/grpc-google-cloud-storage-v2-2.38.0-alpha.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/grpc/grpc-google-cloud-storage-v2/2.38.0-alpha/grpc-google-cloud-storage-v2-2.38.0-alpha.jar"
+            }
+          },
           "software_amazon_awssdk_endpoints_spi_jar_sources_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5246,28 +5224,6 @@
                 "https://repo1.maven.org/maven2/software/amazon/awssdk/endpoints-spi/2.25.23/endpoints-spi-2.25.23-sources.jar"
               ],
               "downloaded_file_path": "v1/software/amazon/awssdk/endpoints-spi/2.25.23/endpoints-spi-2.25.23-sources.jar"
-            }
-          },
-          "com_google_api_grpc_proto_google_cloud_storage_v2_2_37_0_alpha": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "1e77cfa85bc8e10fe1f9b82c1a6c4e317cb7ce0dedb3436a05914fc7b812e3a5",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-cloud-storage-v2/2.37.0-alpha/proto-google-cloud-storage-v2-2.37.0-alpha.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-cloud-storage-v2/2.37.0-alpha/proto-google-cloud-storage-v2-2.37.0-alpha.jar"
-            }
-          },
-          "com_google_api_grpc_proto_google_common_protos_jar_sources_2_38_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "60411e4cb65241fd4e25b4f7dab83a6f117f36223b9a8e124597096d95b38853",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.38.0/proto-google-common-protos-2.38.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-common-protos/2.38.0/proto-google-common-protos-2.38.0-sources.jar"
             }
           },
           "io_netty_netty_transport_native_unix_common_jar_sources_4_1_108_Final": {
@@ -5391,17 +5347,6 @@
               "downloaded_file_path": "v1/org/codehaus/plexus/plexus-classworlds/2.7.0/plexus-classworlds-2.7.0.jar"
             }
           },
-          "com_google_cloud_google_cloud_core_grpc_2_37_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "5aabb22e7bfb7575d446e587fbd0eba5e71522ea482e0667165205f42017ad94",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core-grpc/2.37.0/google-cloud-core-grpc-2.37.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-grpc/2.37.0/google-cloud-core-grpc-2.37.0.jar"
-            }
-          },
           "com_google_auth_google_auth_library_oauth2_http_1_23_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5422,17 +5367,6 @@
                 "https://repo1.maven.org/maven2/org/apache/maven/resolver/maven-resolver-spi/1.9.18/maven-resolver-spi-1.9.18.jar"
               ],
               "downloaded_file_path": "v1/org/apache/maven/resolver/maven-resolver-spi/1.9.18/maven-resolver-spi-1.9.18.jar"
-            }
-          },
-          "com_google_cloud_google_cloud_storage_jar_sources_2_37_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "ef6969ed245067a1c9896059aa9c998331731e0c10cce0595525072ffcda627f",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-storage/2.37.0/google-cloud-storage-2.37.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-storage/2.37.0/google-cloud-storage-2.37.0-sources.jar"
             }
           },
           "io_grpc_grpc_api_jar_sources_1_62_2": {
@@ -5477,6 +5411,17 @@
                 "https://repo1.maven.org/maven2/com/google/guava/guava/33.1.0-jre/guava-33.1.0-jre-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/guava/guava/33.1.0-jre/guava-33.1.0-jre-sources.jar"
+            }
+          },
+          "com_google_cloud_google_cloud_core_http_jar_sources_2_38_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "f3ab9767e433542a6b70db492dc4c2e18fa5badcc0e7d8b998799f69b0081023",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core-http/2.38.0/google-cloud-core-http-2.38.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-http/2.38.0/google-cloud-core-http-2.38.0-sources.jar"
             }
           },
           "org_codehaus_plexus_plexus_container_default_2_1_0": {
@@ -5658,6 +5603,17 @@
               "downloaded_file_path": "v1/com/google/auth/google-auth-library-credentials/1.23.0/google-auth-library-credentials-1.23.0.jar"
             }
           },
+          "com_google_cloud_google_cloud_core_2_38_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "633eccb4f62c4d7b42bbcd541dd80fd3338f4ac6ef88f5b5881465ace3135fd2",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core/2.38.0/google-cloud-core-2.38.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core/2.38.0/google-cloud-core-2.38.0.jar"
+            }
+          },
           "io_opencensus_opencensus_contrib_http_util_0_31_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5722,6 +5678,17 @@
                 "https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java-util/3.25.3/protobuf-java-util-3.25.3.jar"
               ],
               "downloaded_file_path": "v1/com/google/protobuf/protobuf-java-util/3.25.3/protobuf-java-util-3.25.3.jar"
+            }
+          },
+          "com_google_api_gax_grpc_2_48_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "49e6c96680d326b5a2c7ea3b56af37cbae17cc70508552a4754ecde79c34b764",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.48.0/gax-grpc-2.48.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/gax-grpc/2.48.0/gax-grpc-2.48.0.jar"
             }
           },
           "com_google_protobuf_protobuf_java_util_3_25_2": {
@@ -5812,17 +5779,6 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/regions/2.25.23/regions-2.25.23-sources.jar"
             }
           },
-          "com_google_api_gax_jar_sources_2_47_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "0af6bf1714869a9df86c4f16a96f424fe26a430774de82b33e9cfe08149116cf",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/gax/2.47.0/gax-2.47.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/gax/2.47.0/gax-2.47.0-sources.jar"
-            }
-          },
           "io_grpc_grpc_services_jar_sources_1_62_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5832,6 +5788,17 @@
                 "https://repo1.maven.org/maven2/io/grpc/grpc-services/1.62.2/grpc-services-1.62.2-sources.jar"
               ],
               "downloaded_file_path": "v1/io/grpc/grpc-services/1.62.2/grpc-services-1.62.2-sources.jar"
+            }
+          },
+          "com_google_api_gax_grpc_jar_sources_2_48_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "50cf245d021313cf5b58198d4af07aa4a28a1868de69a5aaccfa9af437713db5",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.48.0/gax-grpc-2.48.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/gax-grpc/2.48.0/gax-grpc-2.48.0-sources.jar"
             }
           },
           "com_google_auto_value_auto_value_annotations_jar_sources_1_10_4": {
@@ -5867,15 +5834,15 @@
               "downloaded_file_path": "v1/org/apache/maven/maven-settings/3.9.6/maven-settings-3.9.6.jar"
             }
           },
-          "io_opentelemetry_opentelemetry_api_1_37_0": {
+          "com_google_cloud_google_cloud_storage_jar_sources_2_38_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "35976d45acb98fb3fb527c3aced3e3398443e8664fccd069ea4bd2eca0c294ed",
+              "sha256": "0eb3de180cb37e65cee7bc367b68f4640de89e2f40b2927e1607d7c0482ef3d0",
               "urls": [
-                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-api/1.37.0/opentelemetry-api-1.37.0.jar"
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-storage/2.38.0/google-cloud-storage-2.38.0-sources.jar"
               ],
-              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-api/1.37.0/opentelemetry-api-1.37.0.jar"
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-storage/2.38.0/google-cloud-storage-2.38.0-sources.jar"
             }
           },
           "com_google_api_grpc_proto_google_common_protos_jar_sources_2_37_1": {
@@ -6098,17 +6065,6 @@
               "downloaded_file_path": "v1/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar"
             }
           },
-          "com_google_cloud_google_cloud_core_http_jar_sources_2_37_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "e4f567d009f35f05972781ed7eaad5d7cff9ae4bd67b551f703540519e9e2d1d",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core-http/2.37.0/google-cloud-core-http-2.37.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-http/2.37.0/google-cloud-core-http-2.37.0-sources.jar"
-            }
-          },
           "com_google_http_client_google_http_client_jar_sources_1_44_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6274,17 +6230,6 @@
               "downloaded_file_path": "v1/io/netty/netty-transport-classes-epoll/4.1.108.Final/netty-transport-classes-epoll-4.1.108.Final-sources.jar"
             }
           },
-          "com_google_api_gax_grpc_2_47_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "7b5e7ac54ef3f8a441e0c0be36fdcc62d040eeba2c0395f4711a31b51131094f",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.47.0/gax-grpc-2.47.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/gax-grpc/2.47.0/gax-grpc-2.47.0.jar"
-            }
-          },
           "io_grpc_grpc_googleapis_1_62_2": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6362,17 +6307,6 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/checksums-spi/2.25.23/checksums-spi-2.25.23-sources.jar"
             }
           },
-          "com_google_api_api_common_2_30_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "e33e8e1b4114915bf33fa2b0cc1251eba734a33ce57ce1f0dfe2ff047945bb06",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/api-common/2.30.0/api-common-2.30.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/api-common/2.30.0/api-common-2.30.0.jar"
-            }
-          },
           "com_google_errorprone_error_prone_annotations_jar_sources_2_26_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6415,17 +6349,6 @@
                 "https://repo1.maven.org/maven2/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar"
               ],
               "downloaded_file_path": "v1/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar"
-            }
-          },
-          "com_google_api_grpc_gapic_google_cloud_storage_v2_2_37_0_alpha": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "5415c7bc78f5819855dfb778e4ec267ec7cd7353283000afce1c94b3769755a2",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/gapic-google-cloud-storage-v2/2.37.0-alpha/gapic-google-cloud-storage-v2-2.37.0-alpha.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/grpc/gapic-google-cloud-storage-v2/2.37.0-alpha/gapic-google-cloud-storage-v2-2.37.0-alpha.jar"
             }
           },
           "software_amazon_awssdk_apache_client_jar_sources_2_25_23": {
@@ -6514,6 +6437,17 @@
                 "https://repo1.maven.org/maven2/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0-sources.jar"
+            }
+          },
+          "com_google_cloud_google_cloud_core_jar_sources_2_38_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "ec492227e443614d52e3ce512f0faf2d9768d4b4661f7f481f752ec9ff734e1f",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core/2.38.0/google-cloud-core-2.38.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core/2.38.0/google-cloud-core-2.38.0-sources.jar"
             }
           },
           "org_codehaus_plexus_plexus_utils_jar_sources_3_3_1": {
@@ -6648,6 +6582,17 @@
               "downloaded_file_path": "v1/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4-sources.jar"
             }
           },
+          "com_google_api_gax_httpjson_2_48_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "7493601a466cd3a69a401deee6873086098bc280009a344dff8e6e7f3792cafc",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/gax-httpjson/2.48.0/gax-httpjson-2.48.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/gax-httpjson/2.48.0/gax-httpjson-2.48.0.jar"
+            }
+          },
           "org_slf4j_jul_to_slf4j_2_0_12": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6723,17 +6668,6 @@
                 "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.46.1/gax-grpc-2.46.1.jar"
               ],
               "downloaded_file_path": "v1/com/google/api/gax-grpc/2.46.1/gax-grpc-2.46.1.jar"
-            }
-          },
-          "com_google_api_grpc_gapic_google_cloud_storage_v2_jar_sources_2_37_0_alpha": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "d8b8c180cd574bdb98308daf2d58876fadcb4f20c1fadf37a76e4395ce9baacf",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/gapic-google-cloud-storage-v2/2.37.0-alpha/gapic-google-cloud-storage-v2-2.37.0-alpha-sources.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/grpc/gapic-google-cloud-storage-v2/2.37.0-alpha/gapic-google-cloud-storage-v2-2.37.0-alpha-sources.jar"
             }
           },
           "org_apache_maven_resolver_maven_resolver_util_1_9_18": {
@@ -6857,15 +6791,15 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/arns/2.25.23/arns-2.25.23.jar"
             }
           },
-          "com_google_cloud_google_cloud_core_jar_sources_2_37_0": {
+          "com_google_api_grpc_proto_google_common_protos_jar_sources_2_39_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "f9d22e41fe7072ad74983583c5cdf65bb1347a39d859eaa4adf5c0862922e1cb",
+              "sha256": "ed6e500ba59664439cb806b51d85a4872bda27f7718532a39b27e1bb04c7a86e",
               "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core/2.37.0/google-cloud-core-2.37.0-sources.jar"
+                "https://repo1.maven.org/maven2/com/google/api/grpc/proto-google-common-protos/2.39.0/proto-google-common-protos-2.39.0-sources.jar"
               ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core/2.37.0/google-cloud-core-2.37.0-sources.jar"
+              "downloaded_file_path": "v1/com/google/api/grpc/proto-google-common-protos/2.39.0/proto-google-common-protos-2.39.0-sources.jar"
             }
           },
           "io_netty_netty_codec_http2_4_1_108_Final": {
@@ -6912,6 +6846,17 @@
               "downloaded_file_path": "v1/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.jar"
             }
           },
+          "com_google_cloud_google_cloud_core_grpc_2_38_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "337621ee7186e16062c14234ab159fc624b3176358a9f77e7dddc5a61a2fe31a",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core-grpc/2.38.0/google-cloud-core-grpc-2.38.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-grpc/2.38.0/google-cloud-core-grpc-2.38.0.jar"
+            }
+          },
           "software_amazon_awssdk_sdk_core_jar_sources_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6935,7 +6880,7 @@
               "artifacts": [
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.37.0\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.38.0\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.16\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.22.0\" }"
@@ -7072,17 +7017,6 @@
               "downloaded_file_path": "v1/com/google/api/api-common/2.29.1/api-common-2.29.1.jar"
             }
           },
-          "com_google_api_gax_httpjson_2_47_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "1cc934157eae7ed4ca98051eea2e3f2a7d9244291304f54321100ffa5cc6bebd",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/gax-httpjson/2.47.0/gax-httpjson-2.47.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/gax-httpjson/2.47.0/gax-httpjson-2.47.0.jar"
-            }
-          },
           "software_amazon_awssdk_json_utils_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7103,6 +7037,17 @@
                 "https://repo1.maven.org/maven2/org/conscrypt/conscrypt-openjdk-uber/2.5.2/conscrypt-openjdk-uber-2.5.2.jar"
               ],
               "downloaded_file_path": "v1/org/conscrypt/conscrypt-openjdk-uber/2.5.2/conscrypt-openjdk-uber-2.5.2.jar"
+            }
+          },
+          "com_google_api_grpc_gapic_google_cloud_storage_v2_jar_sources_2_38_0_alpha": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "00c0e91edb6a6c09f871de83badda471e99556592c95098024b3fbf0c14ed430",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/grpc/gapic-google-cloud-storage-v2/2.38.0-alpha/gapic-google-cloud-storage-v2-2.38.0-alpha-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/grpc/gapic-google-cloud-storage-v2/2.38.0-alpha/gapic-google-cloud-storage-v2-2.38.0-alpha-sources.jar"
             }
           },
           "org_apache_maven_maven_core_3_9_6": {
@@ -7319,6 +7264,17 @@
               "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar"
             }
           },
+          "com_google_api_gax_httpjson_jar_sources_2_48_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "566b9ccb1c79a234e53eeac2ef804613335d2c4679fc429d08c030dc8b6ae2c3",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/gax-httpjson/2.48.0/gax-httpjson-2.48.0-sources.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/gax-httpjson/2.48.0/gax-httpjson-2.48.0-sources.jar"
+            }
+          },
           "com_fasterxml_jackson_core_jackson_core_2_17_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7429,6 +7385,17 @@
               "downloaded_file_path": "v1/org/apache/maven/maven-resolver-provider/3.9.6/maven-resolver-provider-3.9.6.jar"
             }
           },
+          "com_google_cloud_google_cloud_core_http_2_38_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "10291c0f7a04502b4c6a2be463e31c82a6912e6174aa66313ef078afee85b153",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core-http/2.38.0/google-cloud-core-http-2.38.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-http/2.38.0/google-cloud-core-http-2.38.0.jar"
+            }
+          },
           "unpinned_maven_wagon_gs_maven": {
             "bzlFile": "@@rules_jvm_external~//:coursier.bzl",
             "ruleClassName": "coursier_fetch",
@@ -7440,7 +7407,7 @@
               "artifacts": [
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-api\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
-                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.37.0\" }",
+                "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.38.0\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.16\" }",
                 "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.13\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.22.0\" }"
@@ -7577,15 +7544,15 @@
               "downloaded_file_path": "v1/com/google/inject/guice/5.1.0/guice-5.1.0.jar"
             }
           },
-          "io_opentelemetry_opentelemetry_context_1_37_0": {
+          "com_google_api_grpc_grpc_google_cloud_storage_v2_jar_sources_2_38_0_alpha": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "98071a718fdb48a493460685660ba92074e0dcea01c545109894d3137df3b6f0",
+              "sha256": "b2439c280678f2665bec39610c184c5246e40ceaf31524179b3c966550955de0",
               "urls": [
-                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-context/1.37.0/opentelemetry-context-1.37.0.jar"
+                "https://repo1.maven.org/maven2/com/google/api/grpc/grpc-google-cloud-storage-v2/2.38.0-alpha/grpc-google-cloud-storage-v2-2.38.0-alpha-sources.jar"
               ],
-              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-context/1.37.0/opentelemetry-context-1.37.0.jar"
+              "downloaded_file_path": "v1/com/google/api/grpc/grpc-google-cloud-storage-v2/2.38.0-alpha/grpc-google-cloud-storage-v2-2.38.0-alpha-sources.jar"
             }
           },
           "com_google_api_gax_httpjson_2_46_1": {
@@ -7676,6 +7643,17 @@
               "downloaded_file_path": "v1/com/google/apis/google-api-services-storage/v1-rev20240311-2.0.0/google-api-services-storage-v1-rev20240311-2.0.0.jar"
             }
           },
+          "com_google_api_api_common_2_31_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "fc5e0e72114652b9ac6afa7d3706cf9c10abd3e001da9d378e50645760c1ba80",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/api-common/2.31.0/api-common-2.31.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/api-common/2.31.0/api-common-2.31.0.jar"
+            }
+          },
           "software_amazon_awssdk_auth_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7696,17 +7674,6 @@
                 "https://repo1.maven.org/maven2/io/grpc/grpc-xds/1.62.2/grpc-xds-1.62.2-sources.jar"
               ],
               "downloaded_file_path": "v1/io/grpc/grpc-xds/1.62.2/grpc-xds-1.62.2-sources.jar"
-            }
-          },
-          "com_google_api_grpc_grpc_google_cloud_storage_v2_2_37_0_alpha": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "15eecf590326285d3108dbdb7644902ac971191bdd36288b0c72e8fce5cb3699",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/api/grpc/grpc-google-cloud-storage-v2/2.37.0-alpha/grpc-google-cloud-storage-v2-2.37.0-alpha.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/api/grpc/grpc-google-cloud-storage-v2/2.37.0-alpha/grpc-google-cloud-storage-v2-2.37.0-alpha.jar"
             }
           },
           "javax_servlet_javax_servlet_api_jar_sources_3_1_0": {
@@ -7784,6 +7751,17 @@
                 "https://repo1.maven.org/maven2/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4-sources.jar"
               ],
               "downloaded_file_path": "v1/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4-sources.jar"
+            }
+          },
+          "com_google_api_grpc_gapic_google_cloud_storage_v2_2_38_0_alpha": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "75cd7355340776f65cbba65b64f4df0fd6b021721cc17559467eea34281875ad",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/api/grpc/gapic-google-cloud-storage-v2/2.38.0-alpha/gapic-google-cloud-storage-v2-2.38.0-alpha.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/api/grpc/gapic-google-cloud-storage-v2/2.38.0-alpha/gapic-google-cloud-storage-v2-2.38.0-alpha.jar"
             }
           },
           "software_amazon_awssdk_netty_nio_client_jar_sources_2_25_23": {
@@ -7885,17 +7863,6 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/endpoints-spi/2.25.23/endpoints-spi-2.25.23.jar"
             }
           },
-          "com_google_cloud_google_cloud_core_http_2_37_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "53a3f44db785bdcfa2ce560cb7696d87d1fd91efbdab8a3d885069217d0192d2",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/cloud/google-cloud-core-http/2.37.0/google-cloud-core-http-2.37.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-http/2.37.0/google-cloud-core-http-2.37.0.jar"
-            }
-          },
           "com_google_api_grpc_proto_google_cloud_storage_v2_jar_sources_2_36_1_alpha": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7916,17 +7883,6 @@
                 "https://repo1.maven.org/maven2/org/apache/maven/resolver/maven-resolver-connector-basic/1.9.18/maven-resolver-connector-basic-1.9.18-sources.jar"
               ],
               "downloaded_file_path": "v1/org/apache/maven/resolver/maven-resolver-connector-basic/1.9.18/maven-resolver-connector-basic-1.9.18-sources.jar"
-            }
-          },
-          "io_opentelemetry_opentelemetry_context_jar_sources_1_37_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "a1098a82e2c7f1e0e70faafbc303d4490418e329674249865bc323956f1b526a",
-              "urls": [
-                "https://repo1.maven.org/maven2/io/opentelemetry/opentelemetry-context/1.37.0/opentelemetry-context-1.37.0-sources.jar"
-              ],
-              "downloaded_file_path": "v1/io/opentelemetry/opentelemetry-context/1.37.0/opentelemetry-context-1.37.0-sources.jar"
             }
           },
           "io_grpc_grpc_netty_shaded_1_62_2": {
