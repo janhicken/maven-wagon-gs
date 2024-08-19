@@ -39,6 +39,7 @@ ci: lint test
 .PHONY: outdated
 outdated:
 	bazel run @maven_wagon_gs_maven//:outdated
+	scripts/find_updates.sh
 
 .PHONY: pin
 pin: maven.lock
