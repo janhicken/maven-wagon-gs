@@ -24,7 +24,7 @@ maven.install(
         "com.google.cloud:google-cloud-nio:0.127.16",
 
         # Logging
-        "org.slf4j:slf4j-jdk14:2.0.13",
+        "org.slf4j:slf4j-jdk14:2.0.16",
 
         # Dev tools
         "com.google.googlejavaformat:google-java-format:1.22.0",

@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "70b9f99be0e6cf050eaef7b38cdbd6ad506f68e0c6914d06fb31905fed04c824",
+  "moduleFileHash": "e3fa60d906bfd5cccc8d38d99c4289ea1b04172652088a32edb9b84c7a92d7dd",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -48,7 +48,7 @@
                   "org.apache.maven.wagon:wagon-provider-test:3.5.3",
                   "com.google.cloud:google-cloud-storage:2.38.0",
                   "com.google.cloud:google-cloud-nio:0.127.16",
-                  "org.slf4j:slf4j-jdk14:2.0.13",
+                  "org.slf4j:slf4j-jdk14:2.0.16",
                   "com.google.googlejavaformat:google-java-format:1.22.0"
                 ],
                 "excluded_artifacts": [
@@ -4417,7 +4417,7 @@
       "general": {
         "bzlTransitiveDigest": "8AIjzxyvVnJujblgziVgY6LujIxVChTDYqcPK+GLgJI=",
         "recordedFileInputs": {
-          "@@//maven.lock": "6dde37dd3110b01a08e82be1525a17c7007d47d54035ccdf1b693aaf85ef14c7",
+          "@@//maven.lock": "01d1b6a17e2930030acb9314381fa4af03fa324279a02e1ff2f3be3ea6c6220d",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8"
         },
         "recordedDirentsInputs": {},
@@ -4577,17 +4577,6 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/netty-nio-client/2.25.23/netty-nio-client-2.25.23.jar"
             }
           },
-          "org_slf4j_slf4j_jdk14_jar_sources_2_0_13": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "8bd6a94a7f610ea9f0180f8b6832bd8b4398f123bea8ad8febe00c36c49e1d1e",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/2.0.13/slf4j-jdk14-2.0.13-sources.jar"
-              ],
-              "downloaded_file_path": "v1/org/slf4j/slf4j-jdk14/2.0.13/slf4j-jdk14-2.0.13-sources.jar"
-            }
-          },
           "org_slf4j_log4j_over_slf4j_2_0_12": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4687,6 +4676,17 @@
               "downloaded_file_path": "v1/org/apache/maven/resolver/maven-resolver-transport-file/1.9.18/maven-resolver-transport-file-1.9.18-sources.jar"
             }
           },
+          "org_slf4j_slf4j_api_jar_sources_2_0_16": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d938ad56953d65bd0806f75d17535fa32b1fc5078051212e0b010f69ec43f8cb",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16-sources.jar"
+              ],
+              "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16-sources.jar"
+            }
+          },
           "software_amazon_awssdk_http_auth_spi_jar_sources_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4709,15 +4709,15 @@
               "downloaded_file_path": "v1/com/google/api/gax/2.48.0/gax-2.48.0-sources.jar"
             }
           },
-          "org_slf4j_slf4j_api_jar_sources_2_0_13": {
+          "org_slf4j_slf4j_jdk14_jar_sources_2_0_16": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "84f366caa66ddaa9d204e5525580b562271663c05970f056815a1be8489e8b52",
+              "sha256": "bf14915cf8728c2c94dff7e4880155f0b3024a7452cd80d778e554bdf727832f",
               "urls": [
-                "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13-sources.jar"
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/2.0.16/slf4j-jdk14-2.0.16-sources.jar"
               ],
-              "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13-sources.jar"
+              "downloaded_file_path": "v1/org/slf4j/slf4j-jdk14/2.0.16/slf4j-jdk14-2.0.16-sources.jar"
             }
           },
           "org_apache_commons_commons_lang3_3_12_0": {
@@ -7551,7 +7551,7 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.38.0\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.16\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.13\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.16\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.22.0\" }"
               ],
               "fetch_sources": true,
@@ -7807,6 +7807,17 @@
               "downloaded_file_path": "v1/io/grpc/grpc-netty-shaded/1.62.2/grpc-netty-shaded-1.62.2-sources.jar"
             }
           },
+          "org_slf4j_slf4j_api_2_0_16": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "a12578dde1ba00bd9b816d388a0b879928d00bab3c83c240f7013bf4196c579a",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar"
+              ],
+              "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar"
+            }
+          },
           "org_codehaus_plexus_plexus_classworlds_jar_sources_2_7_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7920,17 +7931,6 @@
                 "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar"
               ],
               "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar"
-            }
-          },
-          "org_slf4j_slf4j_api_2_0_13": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "e7c2a48e8515ba1f49fa637d57b4e2f590b3f5bd97407ac699c3aa5efb1204a9",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar"
-              ],
-              "downloaded_file_path": "v1/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar"
             }
           },
           "com_google_api_gax_httpjson_jar_sources_2_48_0": {
@@ -8078,7 +8078,7 @@
                 "{ \"group\": \"org.apache.maven.wagon\", \"artifact\": \"wagon-provider-test\", \"version\": \"3.5.3\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-storage\", \"version\": \"2.38.0\" }",
                 "{ \"group\": \"com.google.cloud\", \"artifact\": \"google-cloud-nio\", \"version\": \"0.127.16\" }",
-                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.13\" }",
+                "{ \"group\": \"org.slf4j\", \"artifact\": \"slf4j-jdk14\", \"version\": \"2.0.16\" }",
                 "{ \"group\": \"com.google.googlejavaformat\", \"artifact\": \"google-java-format\", \"version\": \"1.22.0\" }"
               ],
               "fail_on_missing_checksum": true,
@@ -8268,17 +8268,6 @@
               "downloaded_file_path": "v1/io/netty/netty-buffer/4.1.108.Final/netty-buffer-4.1.108.Final-sources.jar"
             }
           },
-          "org_slf4j_slf4j_jdk14_2_0_13": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "83f17205a6470c3cd4214306d3ed011651c173297f705acef544c01795f253cd",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/2.0.13/slf4j-jdk14-2.0.13.jar"
-              ],
-              "downloaded_file_path": "v1/org/slf4j/slf4j-jdk14/2.0.13/slf4j-jdk14-2.0.13.jar"
-            }
-          },
           "software_amazon_awssdk_auth_jar_sources_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -8299,6 +8288,17 @@
                 "https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar"
               ],
               "downloaded_file_path": "v1/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar"
+            }
+          },
+          "org_slf4j_slf4j_jdk14_2_0_16": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "0fcf97cf6dd1f5768cfd57ed5d742fe7114b55a4948dab0d76271a30af859057",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/2.0.16/slf4j-jdk14-2.0.16.jar"
+              ],
+              "downloaded_file_path": "v1/org/slf4j/slf4j-jdk14/2.0.16/slf4j-jdk14-2.0.16.jar"
             }
           },
           "com_google_apis_google_api_services_storage_v1_rev20240311_2_0_0": {
