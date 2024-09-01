@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "e2745d4e479d7661096d83640eb85c8c8b2d0bd1fa1efec5e55f58ab2073d623",
+  "moduleFileHash": "9116b977bec376355e121011d597343d8fd626876b36b91b84407fdde8cef95c",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -46,7 +46,7 @@
                 "artifacts": [
                   "org.apache.maven.wagon:wagon-provider-api:3.5.3",
                   "org.apache.maven.wagon:wagon-provider-test:3.5.3",
-                  "com.google.cloud:google-cloud-storage:2.41.0",
+                  "com.google.cloud:google-cloud-storage:2.42.0",
                   "com.google.cloud:google-cloud-nio:0.127.21",
                   "org.slf4j:slf4j-jdk14:2.0.16",
                   "com.google.googlejavaformat:google-java-format:1.23.0"
