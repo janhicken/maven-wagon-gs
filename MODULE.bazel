@@ -1,6 +1,6 @@
 module(name = "maven_wagon_gs")
 
-bazel_dep(name = "aspect_rules_lint", version = "0.21.0")
+bazel_dep(name = "aspect_rules_lint", version = "1.0.1")
 
 # ╔════════════════════════════════════════════════════════════════════════════╗
 # ║                                   Maven                                    ║

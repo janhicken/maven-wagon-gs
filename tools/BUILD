@@ -39,4 +39,6 @@ java_binary(
 format_multirun(
     name = "format",
     java = ":java_fmt",
+    shell = "@aspect_rules_lint//format:shfmt",
+    yaml = "@aspect_rules_lint//format:yamlfmt",
 )
