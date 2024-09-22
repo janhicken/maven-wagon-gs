@@ -1,7 +1,14 @@
+# Java configuration
 build --explicit_java_test_deps
 build --java_language_version=11
 build --java_runtime_version=remotejdk_11
 build --tool_java_language_version=17
 build --tool_java_runtime_version=remotejdk_17
 
+# Show logs of failing tests
 test --test_output=errors
+
+# Avoid recompile when switching between CLI and IntelliJ
+build --incompatible_strict_action_env
+run --incompatible_strict_action_env
+test --incompatible_strict_action_env

@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "68ca10ac8aeea6d1f525e77e8058abcded56f0df40fd63fd2913b5101ca1ac5c",
+  "moduleFileHash": "64e3d57aff23bb24d92b6231916ff435556f0d7e73d579463914ef17d0e9c499",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -22,7 +22,9 @@
       "key": "<root>",
       "repoName": "maven_wagon_gs",
       "executionPlatformsToRegister": [],
-      "toolchainsToRegister": [],
+      "toolchainsToRegister": [
+        "//:java_toolchain_definition"
+      ],
       "extensionUsages": [
         {
           "extensionBzlFile": "@rules_jvm_external//:extensions.bzl",
@@ -30,7 +32,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 11,
+            "line": 13,
             "column": 22
           },
           "imports": {
@@ -65,7 +67,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 15,
+                "line": 17,
                 "column": 14
               }
             }
