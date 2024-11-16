@@ -1,6 +1,6 @@
 module(name = "maven_wagon_gs")
 
-bazel_dep(name = "aspect_rules_lint", version = "1.0.1")
+bazel_dep(name = "aspect_rules_lint", version = "1.0.3")
 
 register_toolchains("//:java_toolchain_definition")
 
