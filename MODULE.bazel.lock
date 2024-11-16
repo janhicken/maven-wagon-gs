@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "678938a6621b641f2f9d41f423c8fc5f585411c190268329696c5455407183a1",
+  "moduleFileHash": "28abcf83096f3df509f0346cf535a60500cdd81f007edecdb4936d85111d9709",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -51,7 +51,7 @@
                   "com.google.cloud:google-cloud-storage:2.44.1",
                   "com.google.cloud:google-cloud-nio:0.127.26",
                   "org.slf4j:slf4j-jdk14:2.0.16",
-                  "com.google.googlejavaformat:google-java-format:1.23.0"
+                  "com.google.googlejavaformat:google-java-format:1.24.0"
                 ],
                 "excluded_artifacts": [
                   "com.google.collections:google-collections"
