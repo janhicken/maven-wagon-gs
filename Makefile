@@ -38,7 +38,7 @@ ci: lint test
 
 .PHONY: outdated
 outdated:
-	bazel run @maven_wagon_gs_maven//:outdated
+	bazel run --ui_event_filters=-info --noshow_progress --show_result=0 -- @maven_wagon_gs_maven//:outdated
 	scripts/find_updates.sh
 
 .PHONY: pin
