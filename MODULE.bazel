@@ -22,7 +22,7 @@ maven.install(
         "org.apache.maven.wagon:wagon-provider-test:%s" % MAVEN_WAGON_VERSION,
 
         # Google Cloud Storage
-        "com.google.cloud:google-cloud-storage:2.44.1",
+        "com.google.cloud:google-cloud-storage:2.45.0",
         "com.google.cloud:google-cloud-nio:0.127.26",
 
         # Logging
