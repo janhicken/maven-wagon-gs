@@ -16,8 +16,7 @@ java_binary(
             repository_name = "maven_wagon_gs_maven",
         )
         for jar_coord in maven_artifacts
-        if parse.parse_maven_coordinate(jar_coord).get("packaging", "jar") == "jar" and
-           "classifier" not in parse.parse_maven_coordinate(jar_coord)
+        if parse.parse_maven_coordinate(jar_coord).get("classifier") != "sources"
     ],
 )
 
