@@ -37,7 +37,7 @@ java_package_configuration(
     packages = [":java_packages"],
 )
 
-JAVA_VERSION = "11"
+JAVA_VERSION = "17"
 
 default_java_toolchain(
     name = "java_toolchain",
