@@ -8,6 +8,6 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: ~/.cache/bazel
-          key: ${{ runner.os }}-bazel-${{ hashFiles('WORKSPACE') }}
+          key: ${{ runner.os }}-bazel-${{ hashFiles('MODULE.bazel') }}
           restore-keys: ${{ runner.os }}-bazel-
       - run: make ci
