@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/jdk:default_java_toolchain.bzl", "default_java_toolchain")
 load("@rules_jvm_external//:defs.bzl", "java_export")
 
-PROJECT_VERSION = "1.7.12-SNAPSHOT"
+PROJECT_VERSION = "2.0.0-SNAPSHOT"
 
 java_export(
     name = "maven",
