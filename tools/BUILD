@@ -1,5 +1,6 @@
 load("@aspect_rules_lint//format:defs.bzl", "format_multirun")
 load("@maven_wagon_gs_maven//:defs.bzl", "maven_artifacts")
+load("@rules_java//java:defs.bzl", "java_binary")
 load("@rules_jvm_external//:defs.bzl", "artifact")
 load("@rules_jvm_external//:specs.bzl", "parse")
 
