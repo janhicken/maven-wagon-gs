@@ -24,7 +24,7 @@ maven.install(
 
         # Google Cloud Storage
         "com.google.cloud:google-cloud-storage:2.47.0",
-        "com.google.cloud:google-cloud-nio:0.127.28",
+        "com.google.cloud:google-cloud-nio:0.127.29",
 
         # Logging
         "org.slf4j:slf4j-jdk14:2.0.16",
