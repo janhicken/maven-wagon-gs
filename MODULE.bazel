@@ -23,14 +23,17 @@ maven.install(
         "org.apache.maven.wagon:wagon-provider-test:%s" % MAVEN_WAGON_VERSION,
 
         # Google Cloud Storage
-        "com.google.cloud:google-cloud-storage:2.47.0",
-        "com.google.cloud:google-cloud-nio:0.127.29",
+        "com.google.cloud:google-cloud-storage",
+        "com.google.cloud:google-cloud-nio",
 
         # Logging
         "org.slf4j:slf4j-jdk14:2.0.16",
 
         # Dev tools
         "com.google.googlejavaformat:google-java-format:1.25.2",
+    ],
+    boms = [
+        "com.google.cloud:libraries-bom:26.54.0",
     ],
     excluded_artifacts = [
         "com.google.collections:google-collections",
