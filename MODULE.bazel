@@ -33,7 +33,7 @@ maven.install(
         "com.google.googlejavaformat:google-java-format:1.25.2",
     ],
     boms = [
-        "com.google.cloud:libraries-bom:26.54.0",
+        "com.google.cloud:libraries-bom:26.64.0",
     ],
     excluded_artifacts = [
         "com.google.collections:google-collections",
